@@ -196,7 +196,7 @@ document.querySelector(".cart-btn").onclick = () => window.location.href = "cart
 
 // ------------------ GET BOOKS ------------------
 async function getBooks() {
-  const res = await fetch("http://localhost:3000/books");
+  const res = await fetch("https://book-it-mnxw.onrender.com//books");
   const books = await res.json();
   return books;
 }

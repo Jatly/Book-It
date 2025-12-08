@@ -23,7 +23,7 @@ updateTotalCount(); // On page load
 
 // --------------------------------------------------------------
 async function getBooks() {
-  const res = await fetch("http://localhost:3000/books");
+  const res = await fetch("https://book-it-mnxw.onrender.com//books");
   const books = await res.json();
   return books;
 }
@@ -251,7 +251,7 @@ async function main() {
 main();
 
 async function getReviews() {
-  const res = await fetch("http://localhost:3000/reviews");
+  const res = await fetch("https://book-it-mnxw.onrender.com//reviews");
   const reviews = await res.json();
   return reviews;
 }
