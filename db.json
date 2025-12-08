@@ -1,0 +1,319 @@
+{
+
+  "books": [
+    {
+      "id": 1,
+      "name": "The Psychology Of Money",
+      "price": 339,
+      "image": "https://www.crossword.in/cdn/shop/files/the-psychology-of-money-bk0425077-44375834329305.jpg?v=1746614406&width=1000",
+      "description": "Morgan Housel’s 'The Psychology Of Money' explores the nuanced relationship between people and money, offering timeless lessons on wealth, greed, and financial decision-making. Combining insightful stories with practical advice, the book delves into human behavior, showing how emotions, habits, and societal pressures shape our financial outcomes. With compelling narratives and research-backed wisdom, Housel guides readers to understand long-term financial success, risk management, and the psychology behind money choices. This accessible yet profound work is essential for anyone seeking to cultivate financial mindfulness, improve money habits, and achieve lasting economic stability.",
+      "genre": "Finance"
+    },
+    {
+      "id": 2,
+      "name": "Atomic Habits",
+      "price": 449,
+      "image": "https://www.crossword.in/cdn/shop/files/atomic-habits-james-clear-penguin-audio-bk0482739-41509408473305.jpg?v=1746628369&width=1000",
+      "description": "James Clear’s 'Atomic Habits' presents a powerful framework for personal transformation through small, incremental changes. This book emphasizes the compounding effect of tiny habits over time and offers practical strategies to build positive routines while breaking destructive ones. Clear combines scientific research, real-life examples, and actionable insights to demonstrate how environment, behavior triggers, and habit tracking influence success. Readers gain tools to improve productivity, focus, and self-discipline, making the pursuit of long-term goals more achievable. 'Atomic Habits' is a definitive guide for anyone seeking consistent personal growth and the mastery of daily behaviors.",
+      "genre": "SelfHelp"
+    },
+    {
+      "id": 3,
+      "name": "Ikigai",
+      "price": 299,
+      "image": "https://www.crossword.in/cdn/shop/files/crosswordonline-books-default-title-ikigai-japanese-secret-to-long-and-happy-life-hardcover-hector-garcia-francesc-miralles-40421959139545_1_1.webp?v=1745493042&width=1000",
+      "description": "'Ikigai: The Japanese Secret to a Long and Happy Life' by Hector Garcia and Francesc Miralles explores the concept of discovering life’s purpose for fulfillment and longevity. Drawing on interviews with residents of Okinawa, the authors reveal the cultural, philosophical, and practical habits that contribute to happiness and a long life. From daily routines to mindful engagement, the book examines the balance of passion, vocation, profession, and mission. By emphasizing resilience, social connections, and a sense of meaning, 'Ikigai' provides an inspiring guide for readers worldwide to cultivate purpose-driven living and embrace a balanced, joyful lifestyle.",
+      "genre": "Philosophy"
+    },
+    {
+      "id": 4,
+      "name": "The Subtle Art of Not Giving a F*ck",
+      "price": 399,
+      "image": "https://www.crossword.in/cdn/shop/files/crosswordonline-books-default-title-harper-collins-india-the-subtle-art-of-not-giving-a-f-ck-a-counterintuitive-approach-to-living-a-good-life-paperback-mark-manson-40478294016217.jpg?v=1745702358&width=1000",
+      "description": "Mark Manson’s 'The Subtle Art of Not Giving a F*ck' challenges conventional self-help advice with a refreshing approach rooted in realism and personal accountability. Manson emphasizes that embracing life’s limitations, setbacks, and hardships enables authentic growth and fulfillment. Through candid stories, humor, and psychological insights, readers learn to focus on meaningful priorities while letting go of superficial expectations. The book explores the importance of values, responsibility, and resilience in navigating life’s challenges. By understanding what truly matters, readers are empowered to live with intention, make deliberate choices, and cultivate a richer, more satisfying life experience.",
+      "genre": "SelfHelp"
+    },
+    {
+      "id": 5,
+      "name": "Think and Grow Rich",
+      "price": 199,
+      "image": "https://cdn.shopify.com/s/files/1/0648/3066/9017/files/710glbb1Q-L._SL1500_360x.jpg?v=1745702812&width=131",
+      "description": "Napoleon Hill’s 'Think and Grow Rich' is a timeless classic in the realm of personal development and financial success. Drawing from decades of research on wealthy and successful individuals, Hill identifies key principles, such as desire, faith, persistence, and imagination, that shape achievement. The book explores the power of mindset, visualization, and focused action in creating prosperity. With practical exercises, inspirational stories, and actionable advice, Hill guides readers toward cultivating wealth consciousness and personal empowerment. Essential for entrepreneurs, professionals, and anyone seeking motivation, 'Think and Grow Rich' remains a cornerstone work for understanding the psychology of success.",
+      "genre": "Finance"
+    },
+    {
+      "id": 6,
+      "name": "The Alchemist",
+      "price": 349,
+      "image": "https://www.crossword.in/cdn/shop/products/crosswordonline-books-default-title-the-alchemist-paperback-coelho-paulo-40421773967577.jpg?v=1745721373&width=749",
+      "description": "Paulo Coelho’s 'The Alchemist' is a profound fable about dreams, destiny, and self-discovery. Following Santiago, a young shepherd on a quest to find treasure, the novel explores the transformative power of pursuing one’s personal legend. Through allegorical storytelling, Coelho conveys themes of courage, faith, perseverance, and the interconnectedness of life. The narrative emphasizes listening to one’s heart, learning from setbacks, and recognizing signs along the journey. Rich in spiritual insight and poetic reflection, 'The Alchemist' inspires readers to embrace adventure, trust in the unfolding of life, and understand that the real treasure lies in personal growth and self-awareness.",
+      "genre": "Fiction"
+    },
+    {
+      "id": 7,
+      "name": "Rich Dad Poor Dad",
+      "price": 399,
+      "image": "https://www.crossword.in/cdn/shop/files/rich-dad-poor-dad-what-the-rich-teach-their-kids-about-money-bk0470310-44032852132057.jpg?v=1746619060&width=749",
+      "description": "Robert Kiyosaki’s 'Rich Dad Poor Dad' offers a compelling examination of financial literacy, wealth-building, and money management through contrasting perspectives. By sharing lessons learned from his two father figures—one rich, one poor—Kiyosaki highlights the importance of financial education, smart investing, and entrepreneurial thinking. The book addresses concepts like assets versus liabilities, passive income, and the mindset required for financial independence. Combining personal anecdotes, practical advice, and actionable strategies, it equips readers with tools to rethink their approach to money, make informed decisions, and cultivate long-term wealth. A must-read for aspiring investors and financially conscious individuals.",
+      "genre": "Finance"
+    },
+    {
+      "id": 8,
+      "name": "Wings of Fire",
+      "price": 299,
+      "image": "https://www.crossword.in/cdn/shop/products/crosswordonline-books-default-title-wings-of-fire-an-autobiography-paperback-tiwari-arun-and-kalam-a-p-j-abdul-40421822955737.jpg?v=1745673665&width=749",
+      "description": "In 'Wings of Fire', Dr. A.P.J. Abdul Kalam recounts his remarkable journey from a humble background in India to becoming a pioneering aerospace scientist and the President of India. Co-authored with Arun Tiwari, the autobiography highlights the challenges, failures, and triumphs that shaped Kalam’s life. It delves into his scientific achievements, personal values, and commitment to education and nation-building. The book offers inspiration through stories of perseverance, integrity, and visionary thinking. By emphasizing dreams, hard work, and resilience, 'Wings of Fire' serves as a motivational guide for young readers, professionals, and anyone aspiring to achieve greatness against the odds.",
+      "genre": "SelfHelp"
+    },
+    {
+      "id": 9,
+      "name": "Dopamine Detox",
+      "price": 199,
+      "image": "https://www.crossword.in/cdn/shop/files/61MagbCA2yL._SL1500.jpg?v=1745700518&width=749",
+      "description": "'Dopamine Detox' is a practical guide to managing overstimulation and regaining focus in a distraction-driven world. The book explains the science of dopamine and how modern habits—like social media, gaming, and instant gratification—impact motivation and productivity. Through actionable steps, readers learn to reset their brain, cultivate discipline, and regain control over attention and energy. Emphasizing mindfulness, habit restructuring, and conscious decision-making, the book provides strategies to reduce addictive behaviors, improve mental clarity, and foster meaningful engagement with life. It is an essential manual for anyone seeking focus, self-control, and intentional living in the digital age.",
+      "genre": "SelfHelp"
+    },
+    {
+      "id": 10,
+      "name": "The Power of Your Subconscious Mind",
+      "price": 219,
+      "image": "https://www.crossword.in/cdn/shop/products/penguin-random-house-india-books-default-title-power-of-your-subconscious-min-paperback-joseph-murphy-paperback-joseph-murphy-40372839579865.jpg?v=1748703156&width=749",
+      "description": "Joseph Murphy’s 'The Power of Your Subconscious Mind' explores the hidden potential of the mind in shaping reality. Drawing on psychological principles, spiritual wisdom, and practical examples, Murphy explains how thoughts, beliefs, and visualization influence health, wealth, and relationships. The book offers techniques for harnessing subconscious power, including affirmations, meditation, and positive thinking, to overcome obstacles and achieve goals. By understanding and directing subconscious programming, readers can transform limiting beliefs into empowering behaviors. This classic work provides a step-by-step guide for personal development, self-mastery, and attaining success, serving as a foundational text for anyone seeking mental and spiritual growth.",
+      "genre": "SelfHelp"
+    },
+     {
+      "id": 11,
+      "name": "Deep Work",
+      "price": 429,
+      "image": "https://www.crossword.in/cdn/shop/products/hachette-uk-books-default-title-deep-work-rules-for-focused-success-in-a-distracted-world-paperback-newport-cal-paperback-newport-cal-40359324254425.jpg?v=1745698884&width=749",
+      "description": "Cal Newport’s 'Deep Work' offers a compelling framework for achieving intense focus and meaningful productivity in a world dominated by distractions. The book distinguishes between shallow, fragmented work and deep, cognitively demanding efforts, demonstrating how cultivating focused habits can accelerate learning and produce exceptional results. Drawing on case studies, psychological research, and practical strategies, Newport provides actionable advice on time management, attention control, and minimizing distractions. 'Deep Work' empowers readers to master valuable skills, achieve higher-quality output, and unlock professional success. Essential reading for knowledge workers, students, and anyone striving to maximize efficiency and impact in their work.",
+      "genre": "SelfHelp"
+    },
+    {
+      "id": 12,
+      "name": "The 5 AM Club",
+      "price": 349,
+      "image": "https://www.crossword.in/cdn/shop/products/crosswordonline-books-default-title-the-5-am-club-own-your-morning-elevate-your-life-paperback-19-december-2018-paperback-sharma-robin-40421969887449.jpg?v=1745699379&width=749",
+      "description": "Robin Sharma’s 'The 5 AM Club' introduces a transformative approach to productivity, health, and personal growth by mastering early morning routines. The book presents a narrative filled with wisdom, storytelling, and actionable guidance, emphasizing the benefits of starting the day with focus, exercise, and reflection. Sharma explores the 20/20/20 formula—20 minutes of movement, 20 minutes of reflection, and 20 minutes of learning—to optimize energy, mindset, and performance. By embracing discipline, intentionality, and purpose, readers can cultivate self-mastery, achieve ambitious goals, and enhance overall well-being. 'The 5 AM Club' inspires individuals to take control of their mornings and, consequently, their lives.",
+      "genre": "SelfHelp"
+    },
+    {
+      "id": 13,
+      "name": "Harry Potter and the Sorcerer's Stone",
+      "price": 499,
+      "image": "https://www.crossword.in/cdn/shop/products/crosswordonline-books-default-title-harry-potter-and-the-philosopher-s-stone-j-k-rowling-40421717704921.jpg?v=1745732396&width=1000",
+      "description": "J.K. Rowling’s 'Harry Potter and the Sorcerer’s Stone' introduces readers to a magical world filled with wonder, friendship, and adventure. Follow Harry Potter as he discovers his identity as a wizard, begins his education at Hogwarts School of Witchcraft and Wizardry, and confronts dark forces threatening the magical realm. With richly developed characters, imaginative settings, and a narrative that balances mystery, humor, and emotion, this novel sparks creativity and inspires readers of all ages. The book explores themes of courage, loyalty, and self-discovery, marking the beginning of an iconic series that has captivated millions worldwide and continues to influence modern literature and popular culture.",
+      "genre": "Fiction"
+    },
+    {
+      "id": 14,
+      "name": "Percy Jackson and the Lightning Thief",
+      "price": 399,
+      "image": "https://www.crossword.in/cdn/shop/products/crosswordonline-books-default-title-percy-jackson-and-the-lightning-thief-book-1-paperback-riordan-rick-40421711577305.jpg?v=1745732688&width=1000",
+      "description": "Rick Riordan’s 'Percy Jackson and the Lightning Thief' follows the adventures of Percy, a modern-day demigod, as he navigates the challenges of discovering his true identity while interacting with Greek gods and mythical creatures. Blending humor, action, and mythology, the novel offers thrilling escapades, puzzles, and quests that engage readers of all ages. Percy’s journey emphasizes friendship, courage, and resilience, illustrating how ordinary individuals can rise to extraordinary challenges. Riordan’s dynamic storytelling, relatable characters, and imaginative world-building make this book both entertaining and educational, introducing readers to mythology while fostering curiosity, empathy, and excitement for heroic adventures.",
+      "genre": "Fiction"
+    },
+    {
+      "id": 15,
+      "name": "A Good Girl’s Guide to Murder",
+      "price": 349,
+      "image": "https://www.crossword.in/cdn/shop/files/a-good-girls-guide-to-murder-bk0449991-40497325801689.jpg?v=1746628950&width=1000",
+      "description": "'A Good Girl’s Guide to Murder' by Holly Jackson is a gripping young adult mystery that combines suspense, investigative journalism, and complex character development. When a seemingly closed murder case resurfaces, high school student Pip embarks on a dangerous investigation to uncover hidden truths and expose corruption. The novel masterfully weaves tension, twists, and red herrings, keeping readers engaged to the very last page. Themes of morality, justice, and perseverance are explored as Pip balances her personal life with high-stakes sleuthing. This thrilling narrative is ideal for mystery lovers, offering a sophisticated and immersive experience with relatable teen perspectives and high suspense.",
+      "genre": "Mystery"
+    },
+    {
+      "id": 16,
+      "name": "The Millionaire Next Door",
+      "price": 359,
+      "image": "https://www.crossword.in/cdn/shop/files/810Dxl5-LiL._SL1500.jpg?v=1763117528&width=749",
+      "description": "Thomas J. Stanley and William D. Danko’s 'The Millionaire Next Door' investigates the habits, behaviors, and lifestyles of America’s wealthy, challenging common assumptions about wealth and success. Based on extensive research, the book reveals that true financial prosperity often stems from frugality, disciplined saving, and smart investing rather than flashy spending. Readers learn practical insights into building wealth quietly and consistently, including the importance of budgeting, planning, and prioritizing long-term financial goals. Combining statistical evidence with compelling narratives, this classic work serves as both an educational resource and motivational guide for individuals seeking sustainable wealth-building strategies and financial literacy.",
+      "genre": "Finance"
+    },
+    {
+      "id": 17,
+      "name": "Your Money or Your Life",
+      "price": 449,
+      "image": "https://www.crossword.in/cdn/shop/files/71AL7FJJw3L._SL1500.jpg?v=1763890138&width=749",
+      "description": "'Your Money or Your Life' by Vicki Robin and Joe Dominguez offers a transformative approach to personal finance and life fulfillment. The book presents a step-by-step program to evaluate spending, reduce expenses, and align financial decisions with personal values and goals. Through practical exercises, readers learn to track income and expenditures, assess the true cost of work, and cultivate conscious consumption. The authors emphasize the relationship between money, time, and life satisfaction, providing a holistic framework for achieving financial independence. This guide encourages mindful living, responsible financial behavior, and the pursuit of meaningful, purpose-driven choices.",
+      "genre": "Finance"
+    },
+    {
+      "id": 18,
+      "name": "The Intelligent Investor",
+      "price": 599,
+      "image": "https://www.crossword.in/cdn/shop/files/71nyDWJtZiL._SL1500.jpg?v=1748349861&width=749",
+      "description": "Benjamin Graham’s 'The Intelligent Investor' is a cornerstone of investment literature, offering profound insights into value investing, market behavior, and long-term financial planning. Graham introduces foundational principles such as margin of safety, intrinsic value, and disciplined investment strategies, empowering readers to make informed decisions despite market fluctuations. By blending theory, historical examples, and practical guidance, the book cultivates a mindset of patience, critical thinking, and risk management. Essential for both novice and experienced investors, 'The Intelligent Investor' equips readers with the knowledge to navigate financial markets strategically, minimize losses, and achieve sustainable wealth accumulation over time.",
+      "genre": "Finance"
+    },
+    {
+      "id": 19,
+      "name": "The Magic of Thinking Big",
+      "price": 299,
+      "image": "https://www.crossword.in/cdn/shop/files/the-magic-of-thinking-big-bk0290886-44790785540313.jpg?v=1746611514&width=1000",
+      "description": "David J. Schwartz’s 'The Magic of Thinking Big' explores the psychology of achievement, illustrating how mindset, belief, and ambition drive personal and professional success. Through practical techniques, motivational anecdotes, and thought-provoking exercises, Schwartz encourages readers to overcome fear, self-doubt, and limiting beliefs. The book emphasizes the power of goal-setting, visualization, and positive thinking to unlock potential and create opportunities. By demonstrating how small shifts in perspective and behavior can lead to significant accomplishments, this classic work empowers individuals to embrace confidence, action, and persistence. It remains a foundational guide for aspiring leaders, entrepreneurs, and anyone seeking meaningful growth.",
+      "genre": "SelfHelp"
+    },
+    {
+      "id": 20,
+      "name": "The Mountain Is You",
+      "price": 399,
+      "image": "https://www.crossword.in/cdn/shop/files/The_Mountain_Is_You.webp?v=1745697558&width=1000",
+      "description": "Brianna Wiest’s 'The Mountain Is You' examines the internal barriers that prevent personal growth and self-actualization. Through insightful analysis, practical exercises, and psychological wisdom, the book addresses patterns of self-sabotage, fear, and resistance. Wiest guides readers in recognizing emotional blocks, transforming destructive habits, and cultivating resilience, self-awareness, and intentional living. The narrative emphasizes accountability, introspection, and consistent action to overcome challenges and achieve meaningful personal development. With clarity and compassion, 'The Mountain Is You' inspires readers to turn inner struggles into opportunities for growth, enabling them to navigate life’s obstacles with confidence and purpose.",
+      "genre": "SelfHelp"
+    },
+    {
+      "id": 21,
+      "name": "How to Win Friends and Influence People",
+      "price": 349,
+      "image": "https://www.crossword.in/cdn/shop/files/61PqhXEJzGL._SL1500.jpg?v=1753280444&width=1000",
+      "description": "Dale Carnegie’s timeless classic 'How to Win Friends and Influence People' offers actionable strategies to improve interpersonal skills, build meaningful relationships, and achieve professional success. Through practical principles, stories, and examples, Carnegie demonstrates how empathy, listening, and genuine appreciation can foster trust and influence. The book emphasizes communication techniques, conflict resolution, and persuasion while cultivating personal integrity and authenticity. Ideal for business professionals, students, and anyone seeking to enhance social skills, it provides tools to navigate social dynamics effectively, create positive impressions, and achieve both personal and professional goals with confidence and respect.",
+      "genre": "SelfHelp"
+    },
+    {
+      "id": 22,
+      "name": "The Art of Happiness",
+      "price": 399,
+      "image": "https://www.crossword.in/cdn/shop/products/hachette-uk-books-default-title-the-art-of-happiness-a-handbook-for-living-paperback-dalai-lama-the-c-cutler-howard-lama-dalai-and-cutler-howard-40359391690969.jpg?v=1746555261&width=1000",
+      "description": "'The Art of Happiness' by the Dalai Lama and Howard C. Cutler explores the principles and practices of achieving lasting happiness and emotional well-being. Blending Buddhist philosophy with psychological insights, the book addresses topics such as compassion, mindfulness, dealing with suffering, and cultivating inner peace. Through dialogues, reflections, and exercises, readers are encouraged to shift their mindset from negativity to empathy, gratitude, and purpose-driven living. This guide provides a practical framework for balancing personal aspirations with meaningful relationships, helping individuals navigate life’s challenges gracefully. Essential reading for anyone seeking personal growth, emotional resilience, and a fulfilling, harmonious life.",
+      "genre": "Philosophy"
+    },
+    {
+      "id": 23,
+      "name": "Meditations",
+      "price": 299,
+      "image": "https://www.crossword.in/cdn/shop/files/61Ai_DiFIdL._SL1200.jpg?v=1761899330&width=1000",
+      "description": "Marcus Aurelius’ 'Meditations' offers timeless reflections on Stoic philosophy, personal ethics, and self-discipline, written during his life as Roman Emperor. The text explores themes such as resilience, rationality, mindfulness, and virtuous living, providing guidance on maintaining composure amidst adversity. Marcus emphasizes self-examination, humility, and the alignment of actions with reason and integrity. Rich with practical wisdom, the book encourages readers to cultivate inner strength, self-awareness, and tranquility, regardless of external circumstances. Ideal for philosophers, leaders, or anyone seeking personal growth, 'Meditations' continues to inspire readers worldwide with its profound, contemplative insights into living a life of purpose and virtue.",
+      "genre": "Philosophy"
+    },
+    {
+      "id": 24,
+      "name": "The Prophet",
+      "price": 249,
+      "image": "https://www.crossword.in/cdn/shop/files/the-prophet.jpg?v=1752230445&width=1000",
+      "description": "Kahlil Gibran’s 'The Prophet' is a poetic masterpiece exploring profound truths about life, love, work, freedom, and human nature. Through lyrical essays and philosophical musings, the text offers timeless guidance on living with compassion, integrity, and self-awareness. Gibran’s visionary language encourages reflection on personal and societal values, fostering deeper understanding of relationships, emotions, and purpose. Ideal for readers seeking spiritual enrichment or literary inspiration, 'The Prophet' blends artistry with philosophy, delivering insights that resonate across generations. Its enduring appeal lies in its ability to provoke thought, inspire introspection, and cultivate a harmonious balance between the inner self and the world.",
+      "genre": "Philosophy"
+    },
+    {
+      "id": 25,
+      "name": "Stillness Is the Key",
+      "price": 499,
+      "image": "https://www.crossword.in/cdn/shop/products/stillness-is-the-key-an-ancient-strategy-for-modern-life-hardcover-holiday-ryan-hardcover-holiday-ryan-bk0427080-40532757545177.jpg?v=1746610073&width=1000",
+      "description": "Ryan Holiday’s 'Stillness Is the Key' examines the importance of calmness, focus, and clarity in achieving success and personal fulfillment. Drawing from philosophy, history, and modern psychology, Holiday emphasizes the transformative power of reflection, patience, and intentional action. Through stories of historical figures, practical advice, and philosophical insights, the book teaches readers how to cultivate inner peace, master emotions, and reduce mental clutter. Ideal for leaders, creators, and anyone navigating a fast-paced world, 'Stillness Is the Key' highlights how deliberate stillness, mindfulness, and discipline can unlock creativity, resilience, and profound personal and professional growth.",
+      "genre": "Philosophy"
+    },
+    {
+      "id": 26,
+      "name": "The Book Thief",
+      "price": 379,
+      "image": "https://www.crossword.in/cdn/shop/products/crosswordonline-books-default-title-book-thief-the-10th-ae-paperback-penguin-and-zusak-markus-40421784125657.jpg?v=1745919410&width=1000",
+      "description": "Markus Zusak’s 'The Book Thief' is a poignant and haunting tale set during World War II, exploring the life of Liesel, a young girl living in Nazi Germany. Narrated by Death, the novel examines themes of mortality, the power of words, and human resilience amidst tragedy. Liesel discovers the transformative impact of literature, friendship, and courage as she navigates loss, oppression, and personal growth. The narrative’s lyrical prose, vivid imagery, and complex characters immerse readers in an emotional and philosophical exploration of war, humanity, and hope. A literary masterpiece, 'The Book Thief' resonates with readers seeking depth, empathy, and inspiration.",
+      "genre": "Fiction"
+    },
+    {
+      "id": 27,
+      "name": "1984",
+      "price": 299,
+      "image": "https://www.crossword.in/cdn/shop/files/1984-by-george-orwell-bk0506077-44790854418649.jpg?v=1746631310&width=1000",
+      "description": "George Orwell’s '1984' presents a dystopian vision of a totalitarian society dominated by surveillance, propaganda, and thought control. The novel follows Winston Smith as he struggles against oppression, censorship, and manipulation by the Party and Big Brother. Orwell’s incisive exploration of power, autonomy, and truth serves as a cautionary tale about political authoritarianism and the erosion of individual freedoms. With vivid imagery, compelling characters, and profound social critique, '1984' challenges readers to consider the ethical and societal implications of unchecked government control. It remains a critical and thought-provoking text for those examining freedom, democracy, and human rights.",
+      "genre": "Fiction"
+    },
+    {
+      "id": 28,
+      "name": "Norwegian Wood",
+      "price": 399,
+      "image": "https://www.crossword.in/cdn/shop/products/crosswordonline-books-default-title-norwegian-wood-million-copy-bestseller-by-japanese-author-haruki-murakami-paperback-murakami-haruki-40421767938265.jpg?v=1745725795&width=1000",
+      "description": "Haruki Murakami’s 'Norwegian Wood' explores themes of love, loss, and self-discovery through the poignant journey of Toru Watanabe. Set in 1960s Tokyo, the novel delves into complex emotional landscapes, mental health, and the fragility of human connections. Murakami’s elegant prose and introspective narrative create a meditative and immersive reading experience. Through relationships marked by passion, grief, and personal growth, the book examines the delicate interplay between memory, longing, and emotional healing. 'Norwegian Wood' is a literary exploration of youth, identity, and the enduring impact of love and loss, resonating deeply with readers seeking psychological depth and literary artistry.",
+      "genre": "Fiction"
+    },
+    {
+      "id": 29,
+      "name": "The Girl with the Dragon Tattoo",
+      "price": 399,
+      "image": "https://www.crossword.in/cdn/shop/files/the-girl-with-the-dragon-tattoo-1-bk0248515-44847301427417.jpg?v=1746631105&width=1000",
+      "description": "Stieg Larsson’s 'The Girl with the Dragon Tattoo' is a gripping thriller that intertwines mystery, crime, and investigative journalism. Journalist Mikael Blomkvist teams up with hacker Lisbeth Salander to uncover dark secrets and corruption within a wealthy family. The novel’s intricate plotting, compelling characters, and suspenseful pacing keep readers engaged while exploring themes of power, revenge, and social justice. Larsson combines psychological depth with fast-paced narrative, creating an atmospheric and intelligent thriller. Ideal for fans of mysteries and crime fiction, 'The Girl with the Dragon Tattoo' is a sophisticated and immersive story of intrigue, investigation, and the resilience of unconventional heroes.",
+      "genre": "Mystery"
+    },
+    {
+      "id": 30,
+      "name": "Gone Girl",
+      "price": 449,
+      "image": "https://www.crossword.in/cdn/shop/products/crosswordonline-books-default-title-gone-girl-paperback-na-40421749588185.jpg?v=1745712223&width=1000",
+      "description": "Gillian Flynn’s 'Gone Girl' is a psychological thriller that explores deception, marriage, and media perception through a chilling and suspenseful narrative. The story revolves around Amy Dunne’s disappearance and the ensuing investigation that casts her husband, Nick, under intense suspicion. Through alternating perspectives and intricate storytelling, Flynn delves into themes of trust, manipulation, and societal expectations. The novel’s sharp characterization, plot twists, and dark exploration of human psychology create a tense, page-turning experience. 'Gone Girl' challenges readers to question appearances, motives, and the complexities of modern relationships, establishing itself as a contemporary classic in psychological suspense fiction.",
+      "genre": "Mystery"
+    },
+    {
+      "id": 31,
+      "name": "The Da Vinci Code",
+      "price": 499,
+      "image": "https://www.crossword.in/cdn/shop/products/the-da-vinci-code-abridged-edition-paperback-brown-dan-paperback-brown-dan-bk0031415-40525651738841.jpg?v=1760110077&width=1000",
+      "description": "Dan Brown’s 'The Da Vinci Code' is a fast-paced thriller that combines history, art, and cryptography in a riveting global quest. Symbologist Robert Langdon unravels complex codes, secret societies, and hidden messages tied to Christianity’s greatest mysteries. The novel blends intellectual puzzles, historical conjecture, and suspenseful narrative, keeping readers engaged with twists and revelations at every turn. Brown explores themes of faith, morality, and the conflict between knowledge and secrecy. 'The Da Vinci Code' captivates audiences with its intelligent storytelling, intricate plot, and relentless tension, offering a thrilling reading experience for lovers of mysteries, history, and conspiracy-driven adventures.",
+      "genre": "Mystery"
+    },
+    {
+      "id": 32,
+      "name": "Sherlock Holmes: The Hound of the Baskervilles",
+      "price": 299,
+      "image": "https://www.crossword.in/cdn/shop/files/713wiE-YnbL._SL1500.jpg?v=1754122736&width=1000",
+      "description": "Arthur Conan Doyle’s 'The Hound of the Baskervilles' presents one of Sherlock Holmes’ most famous investigations, blending mystery, suspense, and gothic elements. When a wealthy family is threatened by a legendary supernatural hound, Holmes and Watson employ deductive reasoning, careful observation, and logical analysis to uncover the truth. The novel highlights Holmes’ brilliance, Watson’s loyalty, and the tension between superstition and reason. Rich in atmosphere, character development, and intricate plotting, it engages readers with suspenseful twists and detective intrigue. A quintessential work of detective fiction, it exemplifies analytical thinking, problem-solving, and the enduring appeal of classic mystery storytelling.",
+      "genre": "Mystery"
+    },
+    {
+      "id": 33,
+      "name": "The Silent Patient",
+      "price": 349,
+      "image": "https://www.crossword.in/cdn/shop/products/hachette-uk-books-default-title-the-silent-patient-paperback-michaelides-alex-paperback-michaelides-alex-40359614316761.jpg?v=1745714041&width=1000",
+      "description": "Alex Michaelides’ 'The Silent Patient' is a psychological thriller centered on Alicia Berenson, a woman who inexplicably stops speaking after a violent act. Psychotherapist Theo Faber becomes obsessed with uncovering the motives behind her silence, unraveling a web of trauma, obsession, and deception. The novel’s suspenseful pacing, unreliable narrators, and unexpected twists maintain tension and engagement throughout. Exploring themes of trust, mental health, and human vulnerability, Michaelides crafts a gripping narrative that challenges assumptions and keeps readers guessing until the shocking conclusion. 'The Silent Patient' is an engrossing, cerebral thriller, ideal for fans of psychological mysteries and dark character studies.",
+      "genre": "Mystery"
+    },
+    {
+      "id": 34,
+      "name": "The Lord Of The Rings: The Two Towers",
+      "price": 499,
+      "image": "https://www.crossword.in/cdn/shop/products/the-lord-of-the-rings-2-the-two-towers-tv-tie-in-edn-paperback-tolkien-j-r-r-bk0462051-40532749123801.jpg?v=1760098319&width=1000",
+      "description": "J.R.R. Tolkien’s 'The Two Towers' continues the epic journey of the Fellowship of the Ring, depicting the divided paths of its members amidst the rise of Sauron’s power. Richly detailed, the novel explores heroism, friendship, and the struggle between good and evil through complex characters and breathtaking landscapes. Tolkien combines high fantasy, mythology, and intricate world-building to immerse readers in Middle-earth, showcasing battles, quests, and personal growth. Themes of loyalty, courage, and perseverance underscore the narrative, while the storytelling’s depth and imagination provide a timeless reading experience. 'The Two Towers' is essential for fantasy enthusiasts seeking adventure, wonder, and epic storytelling.",
+      "genre": "Fantasy"
+    },
+    {
+      "id": 35,
+      "name": "The Night Circus",
+      "price": 399,
+      "image": "https://www.crossword.in/cdn/shop/products/night-circus-the-paperback-erin-morgenstern-bk0022470-40493601751257.jpg?v=1760797682&width=1000",
+      "description": "Erin Morgenstern’s 'The Night Circus' is a mesmerizing fantasy novel that revolves around a mysterious magical circus that appears without warning. At its heart are two young illusionists bound in a high-stakes competition, whose creations intertwine with love, destiny, and enchantment. Morgenstern’s lyrical prose, vivid imagery, and intricate world-building create an immersive reading experience, highlighting imagination, artistry, and wonder. Themes of choice, fate, and creativity permeate the story, making the circus a metaphorical landscape of human emotion and ambition. 'The Night Circus' captivates readers with its dreamlike atmosphere, complex characters, and magical realism, appealing to lovers of fantasy and literary fiction alike.",
+      "genre": "Fiction"
+    }
+  ]
+
+
+
+
+  ,
+  "reviews": [
+    {
+      "username": "booklover_21",
+      "review": "Amazing collection! The UI is super clean and books are easy to find. Loved the fast delivery.",
+      "rating": 5
+    },
+    {
+      "username": "story_seeker",
+      "review": "Great website for book enthusiasts. Prices are reasonable and the recommendations are accurate.",
+      "rating": 4
+    },
+    {
+      "username": "novel_addict",
+      "review": "Overall a good experience. Checkout was smooth but delivery took slightly longer.",
+      "rating": 4
+    },
+    {
+      "username": "page_turner",
+      "review": "Loved the interface! However, some books were out of stock. Still a great platform.",
+      "rating": 3
+    },
+    {
+      "username": "reader_girl",
+      "review": "Awesome book store! Got rare novels at a discount. Customer support was also helpful.",
+      "rating": 5
+    }
+  ]
+
+
+}

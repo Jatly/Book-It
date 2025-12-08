@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <style>
+      :root {
+        --neon-blue: #00eaff;
+        --neon-green: #00ffbf;
+        --dark-bg: #000;
+        --glass: rgba(255, 255, 255, 0.08);
+      }
+
+      /* ---------------- BODY ---------------- */
+      body {
+        font-family: "Poppins", sans-serif;
+        background: var(--dark-bg);
+        margin: 0;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        overflow-x: hidden;
+        box-sizing: border-box;
+        min-height: 100vh;
+      }
+
+      /* ---------------- HEADER ---------------- */
+      header {
+        position: sticky;
+        top: 0;
+        width: 100vw;
+        padding: 15px 5%;
+        background: rgba(20, 20, 20, 0.45);
+        backdrop-filter: blur(15px) saturate(180%);
+        -webkit-backdrop-filter: blur(15px) saturate(180%);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        gap: 75%;
+        z-index: 1111;
+      }
+
+      .logo {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--neon-blue);
+        cursor: pointer;
+        padding-left: 80px;
+      }
+
+      /* ---------------- SEARCH BOX ---------------- */
+      .do {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px 0;
+        width: 90%;
+        max-width: 500px;
+      }
+
+      .do input {
+        flex: 1;
+        padding: 13.5px 20px;
+        background: #111;
+        border: 1px solid var(--neon-blue);
+        border-right-color: transparent;
+        border-radius: 10px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        color: #fff;
+        outline: none;
+        transition: 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .do input::placeholder {
+        color: #888;
+      }
+
+      .do input:focus {
+        border-color: var(--neon-green);
+        box-shadow: 0 0 8px var(--neon-blue);
+      }
+
+      .do button {
+        padding: 13.5px 20px;
+        border-radius: 10px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-left-color: transparent;
+        background: var(--neon-green);
+        color: #000;
+        cursor: pointer;
+        font-weight: 600;
+        transition: 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .do button:hover {
+        background: var(--neon-blue);
+        box-shadow: 0 0 10px var(--neon-blue);
+      }
+
+      /* ---------------- HEADINGS ---------------- */
+      h1 {
+        text-align: center;
+        margin-bottom: 25px;
+        color: var(--neon-green);
+      }
+
+      /* ---------------- CART ITEM BOX ---------------- */
+      .child {
+        background: var(--glass);
+        border-radius: 12px;
+        backdrop-filter: blur(12px);
+        padding: 12px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin: 20px 0;
+        border: 1px solid rgba(0, 255, 191, 0.3);
+        transition: background 0.3s ease, transform 0.3s ease;
+      }
+
+      .child:hover {
+        background: rgba(255, 255, 255, 0.12);
+        transform: translateY(-3px);
+      }
+
+      /* ---------------- IMAGE ---------------- */
+      .child img {
+        width: 80px;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+
+      /* ---------------- NAME ---------------- */
+      .child h3 {
+        flex: 1;
+        font-size: 18px;
+        color: var(--neon-blue);
+        margin: 0;
+      }
+
+      .child h3:hover {
+        text-shadow: 0 0 8px var(--neon-blue), 0 0 16px var(--neon-green);
+      }
+
+      /* ---------------- PRICE & TOTAL ---------------- */
+      .price,
+      .total {
+        font-size: 16px;
+        color: var(--neon-green);
+        font-weight: 600;
+      }
+
+      /* ---------------- QTY ---------------- */
+      .qty {
+        padding: 6px 10px;
+        font-size: 16px;
+        font-weight: 600;
+        background: var(--neon-blue);
+        color: #000;
+        border-radius: 50%;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        animation: neonPulse 1.5s infinite;
+      }
+
+      @keyframes neonPulse {
+        0%,
+        100% {
+          box-shadow: 0 0 6px var(--neon-blue);
+        }
+        50% {
+          box-shadow: 0 0 12px var(--neon-green);
+        }
+      }
+
+      /* ---------------- BUTTONS ---------------- */
+      button {
+        padding: 6px 12px;
+        font-size: 16px;
+        font-weight: 600;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        background: var(--neon-green);
+        color: #000;
+        transition: all 0.3s ease;
+      }
+
+      button:hover {
+        transform: scale(1.05);
+        background: var(--neon-blue);
+      }
+
+      button:focus {
+        outline: 2px solid var(--neon-blue);
+        outline-offset: 2px;
+      }
+
+      button:active {
+        transform: scale(0.95);
+      }
+
+      /* ---------------- BILL ---------------- */
+      .bill {
+        width: auto;
+        height: 70px;
+        background: var(--glass);
+        font-size: larger;
+        font-weight: bolder;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        margin-top: 20px;
+      }
+
+      /* ---------------- PAYMENT CONTAINER ---------------- */
+      .payment-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 250px;
+        margin: 30px auto;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      .payment-select select {
+        width: 100%;
+        padding: 10px 15px;
+        border: 2px solid var(--neon-blue);
+        border-radius: 8px;
+        font-size: 16px;
+        background-color: #1a1a1a;
+        color: #fff;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .payment-select select:hover {
+        border-color: var(--neon-green);
+        box-shadow: 0 0 8px var(--neon-green);
+      }
+
+      .payment-select select:focus {
+        outline: 2px solid var(--neon-green);
+      }
+
+      /* ---------------- CONFIRM BUTTON ---------------- */
+      .confirm-btn {
+        padding: 12px;
+        background: #434bff;
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .confirm-btn:hover {
+        background: #5f78ff;
+        box-shadow: 0 4px 10px rgba(67, 75, 255, 0.3);
+      }
+
+      .confirm-btn:focus {
+        outline: 2px solid var(--neon-blue);
+      }
+
+      .confirm-btn:active {
+        transform: scale(0.95);
+      }
+
+      /* ---------------- RESPONSIVE ---------------- */
+      @media (max-width: 600px) {
+        .child {
+          flex-wrap: wrap;
+          height: auto;
+          padding: 15px;
+          gap: 10px;
+        }
+
+        .child img {
+          width: 100%;
+          height: 160px;
+        }
+
+        .child h3 {
+          width: 100%;
+        }
+
+        button {
+          padding: 10px 16px;
+          font-size: 17px;
+        }
+
+        .payment-container {
+          width: 90%;
+        }
+
+        .do {
+          flex-direction: column;
+        }
+
+        .do input,
+        .do button {
+          width: 100%;
+          border-radius: 10px;
+          border-right-color: var(--neon-blue);
+          border-left-color: var(--neon-green);
+          margin-bottom: 10px;
+        }
+      }
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo" onclick="window.location.href='index.html'">Book-It</div>
+      <button class="clear" onclick="clearall()">
+        Clear All <i class="fa-solid fa-trash-can"></i>
+      </button>
+      <!-- <div></div> -->
+    </header>
+
+    <script>
+      // ---------------------- CART LOGIC ----------------------
+      let data = JSON.parse(localStorage.getItem("cartItems")) || [];
+      console.log(data);
+
+      let tosum = 0; // total bill amount
+      let tc = 0; // total quantity
+
+      const productsContainer = document.createElement("div");
+      productsContainer.classList.add("products");
+      document.body.append(productsContainer);
+
+      // ---------------------- LOOP THROUGH PRODUCTS ----------------------
+      data.forEach((val) => {
+        let card = document.createElement("div");
+        card.classList.add("child");
+
+        let img = document.createElement("img");
+        let h3 = document.createElement("h3");
+        let p = document.createElement("p");
+        let q = document.createElement("p");
+        let add = document.createElement("button");
+        let remove = document.createElement("button");
+        let dlt = document.createElement("button");
+        let total = document.createElement("div");
+
+        total.classList.add("total");
+        p.classList.add("price");
+        q.classList.add("qty");
+
+        add.innerText = "+";
+        remove.innerText = "-";
+
+        dlt.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
+        dlt.style.backgroundColor = "red";
+        dlt.style.color = "white";
+
+        // ---------------------- PRICE CALCULATION ----------------------
+        let sum = val.price * val.qty;
+        total.innerText = "₹" + sum;
+
+        tosum += sum;
+        tc += val.qty;
+
+        // ---------------------- BUTTON ACTIONS ----------------------
+        add.onclick = function () {
+          val.qty += 1;
+          localStorage.setItem("cartItems", JSON.stringify(data));
+          window.location.reload();
+        };
+
+        remove.onclick = function () {
+          if (val.qty > 1) {
+            val.qty -= 1;
+            localStorage.setItem("cartItems", JSON.stringify(data));
+            window.location.reload();
+          } else {
+            data = data.filter((item) => item.name !== val.name);
+            localStorage.setItem("cartItems", JSON.stringify(data));
+            window.location.reload();
+          }
+        };
+
+        dlt.onclick = function () {
+          data = data.filter((item) => item.name !== val.name);
+          localStorage.setItem("cartItems", JSON.stringify(data));
+          window.location.reload();
+        };
+
+        img.src = val.image;
+        h3.innerText = val.name;
+        p.innerText = `₹${val.price}`;
+        q.innerText = val.qty;
+
+        card.append(img, h3, total, q, remove, add, dlt);
+        productsContainer.append(card);
+      });
+
+      // ---------------------- TOTAL QUANTITY ----------------------
+      localStorage.setItem("tc", tc);
+
+      // ---------------------- BILL ----------------------
+      let bill = document.createElement("div");
+      bill.classList.add("bill");
+      updateBillUI();
+      document.body.append(bill);
+
+      function updateBillUI() {
+        if (data.length === 0) {
+          bill.innerText = "Cart is empty, Add Products";
+          bill.style.background = "transparent";
+          bill.style.fontSize = "2.5rem";
+        } else {
+          let discounted = localStorage.getItem("discountedTotal");
+          if (discounted) {
+            bill.innerHTML = `Total Bill After Offer: ₹${discounted}`;
+          } else {
+            bill.innerHTML = `Total Bill: ₹${tosum}`;
+          }
+        }
+      }
+
+      // ---------------------- CLEAR ALL ----------------------
+      function clearall() {
+        localStorage.removeItem("cartItems");
+        localStorage.setItem("tc", 0);
+        localStorage.removeItem("discountedTotal");
+        window.location.reload();
+      }
+
+      // ---------------------- OFFER LOGIC ----------------------
+      let offers = [45, 20, 10, 30, 50];
+      let currentOffer = null;
+      let offerTimer = null;
+
+      const notification = document.createElement("div");
+      notification.classList.add("notification");
+      notification.style.display = "none";
+      notification.innerHTML = `
+  <span id="offerText"></span>
+  <button id="claimBtn">Claim</button>
+`;
+      document.body.append(notification);
+
+      function showOffer() {
+        let lastClaim = localStorage.getItem("offerClaimTime");
+
+        // ⛔ Offer claimed within last 30 mins → Do NOT show new offer
+        if (lastClaim && Date.now() - lastClaim < 30 * 60 * 1000) {
+          notification.style.display = "block";
+          document.getElementById("offerText").innerText =
+            "⚠️ Offer already claimed. Try again later.";
+          document.getElementById("claimBtn").style.display = "none";
+          return;
+        }
+
+        // 🟢 Show new offer
+        currentOffer = offers[Math.floor(Math.random() * offers.length)];
+        document.getElementById(
+          "offerText"
+        ).innerText = `🎉 You got ${currentOffer}% OFF! (Valid for 2 min)`;
+        document.getElementById("claimBtn").style.display = "inline-block";
+        notification.style.display = "block";
+
+        if (offerTimer) clearTimeout(offerTimer);
+
+        offerTimer = setTimeout(() => {
+          notification.style.display = "none";
+          currentOffer = null;
+        }, 2 * 60 * 1000); // 2 minutes
+      }
+
+      document.getElementById("claimBtn").onclick = function () {
+        if (currentOffer == null) return;
+
+        let data = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+        // 🛑 Prevent claiming discount again on same cart
+        let previousCart = JSON.parse(localStorage.getItem("discountedCart"));
+        if (
+          previousCart &&
+          JSON.stringify(previousCart) === JSON.stringify(data)
+        ) {
+          alert("You have already used an offer for this cart!");
+          return;
+        }
+
+        // 💰 Calculate discount
+        let total = data.reduce((sum, item) => sum + item.price * item.qty, 0);
+        let discountAmount = (total * currentOffer) / 100;
+        let finalTotal = Math.floor(total - discountAmount);
+        console.log(finalTotal);
+        
+
+        // Save discount data
+        localStorage.setItem("discountedTotal", finalTotal);
+        localStorage.setItem("discountedCart", JSON.stringify(data));
+        localStorage.setItem("offerApplied", currentOffer + "% OFF");
+
+
+        // Save 30 min claim lock
+        localStorage.setItem("offerClaimTime", Date.now());
+
+        updateBillUI();
+        notification.style.display = "none";
+        currentOffer = null;
+      };
+
+      // ---------------------- PAYMENT SELECT BELOW PRODUCTS ----------------------
+      const select = document.createElement("div");
+      select.innerHTML = `
+  <div class="payment-container">
+    <div class="payment-select">
+      <select>
+        <option>Cash On Delivery</option>
+        <option>UPI</option>
+        <option>Net Banking</option>
+        <option>Debit Card</option>
+        <option>Credit Card</option>
+      </select>
+    </div>
+    <button class="confirm-btn">Confirm Order</button>
+  </div>
+`;
+      if (data.length === 0) {
+        select.style.display = "none";
+      }
+      document.body.append(select);
+
+      const confirmBtn = select.querySelector(".confirm-btn");
+      confirmBtn.onclick = function () {
+  let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+  let total = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
+
+  let discountedTotal = localStorage.getItem("discountedTotal") || total;
+  let offerApplied = localStorage.getItem("offerApplied") || "No Offer";
+
+  // ---------- BILL DATA OBJECT ----------
+  let billData = {
+    products: cart,
+    offer: offerApplied,
+    delivery: "FREE",
+    total: total,
+    finalAmount: discountedTotal
+  };
+
+  // ---------- SAVE FOR BILL PAGE ----------
+  localStorage.setItem("billData", JSON.stringify(billData));
+
+  window.location.href = "deliver.html";
+};
+
+      // ---------------------- OFFER BUTTON ----------------------
+      const offerBtn = document.createElement("button");
+      offerBtn.classList.add("off");
+      offerBtn.innerText = "Check for Offers";
+      offerBtn.onclick = showOffer;
+      document.body.insertBefore(offerBtn, notification); // place above notification
+      if (data.length === 0) {
+        offerBtn.style.display = "none";
+      }
+    </script>
+  </body>
+</html>

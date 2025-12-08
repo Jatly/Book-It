@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book-It</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <header>
+        <div class="logo" onclick="window.location.href='index.html'">
+          Book-It
+        </div>
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+        <nav>
+          <div class="m" onclick="window.location.href='index.html'">Home</div>
+          <div class="m" onclick="window.location.href='#about'">About</div>
+          <div class="m" onclick="window.location.href='#products'">
+            Products
+          </div>
+          <div class="m" onclick="window.location.href='#reviews'">Reviews</div>
+          <div class="m" onclick="window.location.href='whishlist.html'">
+            <i class="fa-regular fa-heart"></i>
+          </div>
+          <div class="m" onclick="window.location.href='cart.html'">
+            <i class="fa-solid fa-cart-arrow-down"></i
+            ><sup><span class="tco">0</span></sup>
+          </div>
+          <div class="m" onclick="window.location.href='#contact'">Contact</div>
+
+          <button class="loc" onclick="window.location.href='login.html'">
+            Login <i class="fa-regular fa-user"></i>
+          </button>
+        </nav>
+    </header>
+    <section class="hero">
+      <div class="l">
+        <h2>Books for Every Mood.</h2>
+        <p>
+          Discover curated collections, trending titles, and hidden literary
+          gems.
+        </p>
+        <button class="btn">Order Now</button>
+      </div>
+    </section>
+    <section class="about" id="about">
+      <h2>About</h2>
+      <p>
+        At our bookstore, we celebrate the beauty of reading — the quiet
+        moments, the imaginative journeys, and the comfort found between pages.
+        Every shelf is thoughtfully curated with books that match every mood,
+        from contemporary bestsellers to rare literary treasures waiting to be
+        discovered. We focus on bringing you a refined reading experience
+        through handpicked titles, enriching genres, and a seamless space to
+        explore stories that inspire, educate, and entertain. Whether you're
+        searching for your next escape, a meaningful gift, or a book that sparks
+        new ideas, we’re here to help you find it. Here, every book has a
+        purpose… and every reader has a place.
+      </p>
+    </section>
+    <section class="products" id="products">
+      <h2>Products</h2>
+      <div class="drop">
+        <!-- Main Sort Dropdown -->
+        <select id="sortType">
+          <option value="" selected>----- All -----</option>
+          <option value="price">Sort by Price</option>
+          <option value="genre">Sort by Genre</option>
+        </select>
+
+        <!-- Price Sort Dropdown -->
+        <select id="priceSort" style="display: none">
+          <option value="" selected disabled>---None---</option>
+          <option value="lh">Low to High</option>
+          <option value="hl">High to Low</option>
+        </select>
+        <!-- Genre Sort Dropdown -->
+        <select id="genreSort" style="display: none">
+          <option value="" selected disabled>All</option>
+          <option value="Finance">Finance</option>
+          <option value="SelfHelp">SelfHelp</option>
+          <option value="Philosophy">Philosophy</option>
+          <option value="Fiction">Fiction</option>
+          <option value="Mystery">Mystery</option>
+        </select>
+      </div>
+    </section>
+    <section class="rw" id="reviews">
+      <h2>Reviews</h2>
+      <div class="con"></div>
+    </section>
+    <section class="contact" id="contact">
+      <h2>Contact Us</h2>
+      <form action="#" method="POST" class="contact-form">
+        <input type="text" name="name" placeholder="Enter Your Name" required />
+        <input
+          type="email"
+          name="email"
+          placeholder="Enter Your Email"
+          required
+        />
+        <textarea
+          name="message"
+          id=""
+          placeholder="Enter Your Message..."
+          rows="5"
+          required
+        ></textarea>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </section>
+
+    <footer>
+      <div class="logo" onclick="window.location.href='index.html'">Book-It</div>
+      <p class="copy">© 2025 Book-It. All Rights Reserved.</p>
+    </footer>
+
+    <!-- <div class="bot"></div>
+
+    <div class="chat" id="chatBox">
+      <div class="messages" id="messages"></div>
+
+      <input type="text" id="userInput" placeholder="Type a message..." />
+      <button class="chbtn" onclick="sendMsg()">Send</button>
+    </div> -->
+
+    <script src="script.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
+  </body>
+</html>

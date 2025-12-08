@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details</title>
+
+    <style>
+      /* ---------- GLOBAL ---------- */
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #000;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* ---------- PRODUCT CONTAINER ---------- */
+
+      .product-page {
+        width: 90%;
+        max-width: 1100px;
+        min-height: 90vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+
+        background: rgba(255, 255, 255, 0.07);
+        border-radius: 22px;
+        backdrop-filter: blur(12px);
+        box-shadow: 0 0 30px rgba(0, 255, 200, 0.15);
+        padding: 50px;
+        border: 1px solid rgba(0, 234, 255, 0.25);
+      }
+
+      /* ---------- IMAGE SECTION ---------- */
+
+      .product-image-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .product-image-box img {
+        width: 100%;
+        max-width: 420px;
+        border-radius: 18px;
+        object-fit: cover;
+        box-shadow: 0 0 12px rgba(0, 255, 200, 0.2);
+      }
+
+      /* ---------- DETAILS SECTION ---------- */
+
+      .details h2 {
+        font-size: 34px;
+        margin-bottom: 18px;
+        color: #00eaff;
+      }
+
+      .price {
+        font-size: 30px;
+        font-weight: 700;
+        color: #00ffbf;
+        margin-bottom: 20px;
+      }
+
+      .genre {
+        font-size: 15px;
+        color: #89e7ff;
+        margin: 10px 0;
+      }
+
+      .desc {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #ccc;
+        margin: 20px 0 30px;
+        max-height: 300px;
+        overflow-y: auto;
+      }
+
+      .desc::-webkit-scrollbar {
+        width: 6px;
+      }
+      .desc::-webkit-scrollbar-thumb {
+        background: #00eaff;
+        border-radius: 10px;
+      }
+
+      /* ---------- BUTTONS ---------- */
+
+      button {
+        width: 100%;
+        padding: 16px 0;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: 700;
+        transition: 0.25s;
+      }
+
+      .btnBox {
+        display: flex;
+        gap: 12px;
+        margin-top: 20px;
+        justify-content: center;
+      }
+
+      .addCartBtn {
+        width: 100%;
+        padding: 12px;
+        background: #00eaff;
+        border: none;
+        border-radius: 8px;
+        color: #000;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .qtyBtn {
+        width: 40px;
+        height: 40px;
+        border: none;
+        border-radius: 8px;
+        background: #00eaff;
+        color: #000;
+        font-size: 20px;
+        font-weight: 700;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .qtyDisplay {
+        min-width: 40px;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 700;
+        padding-top: 6px;
+      }
+
+      /* Back Button */
+      .backBtn {
+        background: #222;
+        color: #fff;
+      }
+      .backBtn:hover {
+        background: #333;
+      }
+
+      /* ---------- MOBILE RESPONSIVE ---------- */
+
+      @media (max-width: 768px) {
+        .product-page {
+          grid-template-columns: 1fr;
+          padding: 30px;
+          gap: 30px;
+        }
+
+        .product-image-box img {
+          max-width: 90%;
+        }
+
+        .details h2 {
+          font-size: 28px;
+        }
+
+        .price {
+          font-size: 22px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="product-page">
+      <!-- LEFT IMAGE -->
+      <div class="product-image-box">
+        <img class="pimg" src="" alt="" />
+      </div>
+
+      <!-- RIGHT DETAILS -->
+      <div class="details">
+        <h2 class="pname"></h2>
+        <div class="price pprice"></div>
+        <p class="genre pgenre"></p>
+        <p class="desc pdesc"></p>
+
+        <div class="btnBox">Add to Cart</div>
+        <button class="backBtn">← Back</button>
+      </div>
+    </div>
+
+    <script>
+      // ------------ LOAD PRODUCT ------------
+      let prod = JSON.parse(localStorage.getItem("prod"));
+
+      if (!prod) {
+        document.body.innerHTML =
+          "<h2 style='color:#fff;text-align:center;'>No product found</h2>";
+      } else {
+        document.querySelector(".pimg").src = prod.image;
+        document.querySelector(".pname").innerText = prod.name;
+        document.querySelector(".pprice").innerText = `₹${prod.price}`;
+        document.querySelector(".pdesc").innerText = prod.description;
+        document.querySelector(".pgenre").innerText = "Genre: " + prod.genre;
+
+        
+      }
+      document.title = prod.name;
+      // ------------ CART STORAGE ------------
+      let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+      // ------------ FIND CURRENT COUNT ------------
+      let count = 0;
+      let existing = cart.find((i) => i.name === prod.name);
+      if (existing) count = existing.qty;
+
+      const btnBox = document.querySelector(".btnBox");
+
+      // ------------ SAVE CART ------------
+      function saveCart() {
+        localStorage.setItem("cartItems", JSON.stringify(cart));
+      }
+
+      // ------------ RENDER UI ------------
+      function renderUI() {
+        btnBox.innerHTML = "";
+
+        // If not added → show Add to Cart
+        if (count === 0) {
+          let addBtn = document.createElement("button");
+          addBtn.innerText = "Add to Cart";
+          addBtn.className = "addCartBtn";
+
+          addBtn.onclick = () => {
+            count = 1;
+            cart.push({ ...prod, qty: 1 });
+            saveCart();
+            renderUI();
+          };
+
+          btnBox.append(addBtn);
+          return;
+        }
+
+        // ------------ QTY MODE ------------
+        let minusBtn = document.createElement("button");
+        minusBtn.innerText = "-";
+        minusBtn.className = "qtyBtn";
+
+        let qtyBtn = document.createElement("span");
+        qtyBtn.innerText = count;
+        qtyBtn.className = "qtyDisplay";
+
+        let plusBtn = document.createElement("button");
+        plusBtn.innerText = "+";
+        plusBtn.className = "qtyBtn";
+
+        // minus click
+        minusBtn.onclick = () => {
+          count--;
+
+          if (count <= 0) {
+            cart = cart.filter((i) => i.name !== prod.name);
+            saveCart();
+            count = 0;
+            renderUI();
+            return;
+          }
+
+          let item = cart.find((i) => i.name === prod.name);
+          item.qty = count;
+          saveCart();
+          renderUI();
+        };
+
+        // plus click
+        plusBtn.onclick = () => {
+          count++;
+
+          let item = cart.find((i) => i.name === prod.name);
+          if (!item) {
+            cart.push({ ...prod, qty: count });
+          } else {
+            item.qty = count;
+          }
+
+          saveCart();
+          renderUI();
+        };
+
+        btnBox.append(minusBtn, qtyBtn, plusBtn);
+      }
+
+      // initial UI render
+      renderUI();
+
+      // ------------ BACK BUTTON ------------
+      document.querySelector(".backBtn").onclick = () => {
+        localStorage.removeItem("prod");
+        history.back();
+      };
+
+      window.addEventListener("beforeunload", () => {
+        localStorage.removeItem("prod");
+      });
+    </script>
+  </body>
+</html>
