@@ -17,6 +17,18 @@
   </head>
 
   <body>
+    <div id="loader-wrapper">
+    <div class="loader">
+      <span><span></span><span></span><span></span><span></span></span>
+      <div class="base">
+        <span></span>
+        <div class="face"></div>
+      </div>
+    </div>
+    <div class="longfazers">
+      <span></span><span></span><span></span><span></span>
+    </div>
+  </div>
     <header>
         <div class="logo" onclick="window.location.href='index.html'">
           Book-It
@@ -39,9 +51,12 @@
           </div>
           <div class="m" onclick="window.location.href='#contact'">Contact</div>
 
-          <button class="loc" onclick="window.location.href='login.html'">
-            Login <i class="fa-regular fa-user"></i>
-          </button>
+          <button class="loc" id="loginBtnIndex" onclick="window.location.href='login.html'">
+    Login <i class="fa-regular fa-user"></i>
+</button>
+
+          <span id="userName" style="display:none; font-weight:bold;"></span>
+
         </nav>
     </header>
     <section class="hero">
@@ -136,6 +151,57 @@
     </div> -->
 
     <script src="script.js"></script>
+    <script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
+import { getAuth, onAuthStateChanged } 
+    from "https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js";
+import { getFirestore, doc, getDoc } 
+    from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
+
+// SAME CONFIG AS login.html
+const firebaseConfig = {
+  apiKey: "AIzaSyDqL0PxVEwZw0EjCXRr-4GoeVXBYUbLKzM",
+  authDomain: "book-it-31803.firebaseapp.com",
+  projectId: "book-it-31803",
+  storageBucket: "book-it-31803.firebasestorage.app",
+  messagingSenderId: "811736774940",
+  appId: "1:811736774940:web:17b328d65d808f8492a2d9"
+};
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+// Get elements
+const loginBtn = document.getElementById("loginBtnIndex");
+const usernameSpan = document.getElementById("userName");
+
+// Check Firebase login state
+onAuthStateChanged(auth, async (user) => {
+    console.log("User status:", user);
+
+    if (user) {
+        // Fetch name from Firestore
+        const snap = await getDoc(doc(db, "users", user.uid));
+
+        if (snap.exists()) {
+            const name = snap.data().name;
+
+            // Hide Login button
+            loginBtn.style.display = "none";
+
+            // Show username
+            usernameSpan.style.display = "inline-block";
+            usernameSpan.innerHTML = name + " <i class='fa-regular fa-user'></i>";
+        }
+    } 
+    else {
+        loginBtn.style.display = "inline-block";
+        usernameSpan.style.display = "none";
+    }
+});
+</script>
+
+
     <script
       type="module"
       src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"

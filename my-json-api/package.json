@@ -5,6 +5,7 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "firebase": "^12.6.0",
     "json-server": "^0.17.4"
   }
 }

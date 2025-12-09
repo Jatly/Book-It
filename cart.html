@@ -336,6 +336,30 @@
       </button>
       <!-- <div></div> -->
     </header>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDqL0PxVEwZw0EjCXRr-4GoeVXBYUbLKzM",
+  authDomain: "book-it-31803.firebaseapp.com",
+  projectId: "book-it-31803",
+  storageBucket: "book-it-31803.firebasestorage.app",
+  messagingSenderId: "811736774940",
+  appId: "1:811736774940:web:17b328d65d808f8492a2d9"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+onAuthStateChanged(auth, (user) => {
+    if (!user) {
+        // User NOT logged in
+        alert("You must be logged in to access this page.");
+        window.location.href = "login.html";
+    }
+});
+</script>
 
     <script>
       // ---------------------- CART LOGIC ----------------------

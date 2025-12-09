@@ -257,62 +257,133 @@ input::placeholder {
     </style>
 </head>
 <body>
-
-
 <div class="container" id="container">
 
-	<!-- SIGN UP -->
-	<div class="form-container sign-up-container">
-		<form action="#">
-			<h1>Create Account</h1>
-			<input type="text" placeholder="Name" />
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
-			<button>Sign Up</button>
-		</form>
-	</div>
+    <!-- SIGN UP -->
+    <div class="form-container sign-up-container">
+        <form id="signup-form">
+            <h1>Create Account</h1>
 
-	<!-- LOGIN -->
-	<div class="form-container sign-in-container">
-		<form action="#">
-			<h1>Login</h1>
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
-			<a href="#">Forgot your password?</a>
-			<button>Login</button>
-		</form>
-	</div>
+            <input type="text" id="signup-name" placeholder="Name" />
+            <input type="email" id="signup-email" placeholder="Email" />
+            <input type="password" id="signup-password" placeholder="Password" />
 
-	<div class="overlay-container">
-		<div class="overlay">
-			<div class="overlay-panel overlay-left">
-				<h1>Welcome Back!</h1>
-				<p>If you already have an account, just login</p>
-				<button class="ghost" id="signIn">Login</button>
-			</div>
-			<div class="overlay-panel overlay-right">
-				<h1>Hello, Friend!</h1>
-				<p>Create your personal account to get started</p>
-				<button class="ghost" id="signUp">Sign Up</button>
-			</div>
-		</div>
-	</div>
+            <button type="button" id="signupBtn">Sign Up</button>
+        </form>
+    </div>
+
+    <!-- LOGIN -->
+    <div class="form-container sign-in-container">
+        <form id="login-form">
+            <h1>Login</h1>
+
+            <input type="email" id="login-email" placeholder="Email" />
+            <input type="password" id="login-password" placeholder="Password" />
+
+            <a href="#">Forgot your password?</a>
+
+            <button type="button" id="loginBtn">Login</button>
+        </form>
+    </div>
+
+    <!-- SIDE PANELS -->
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Welcome Back!</h1>
+                <p>If you already have an account, just login</p>
+                <button class="ghost" id="signIn">Login</button>
+            </div>
+
+            <div class="overlay-panel overlay-right">
+                <h1>Hello, Friend!</h1>
+                <p>Create your personal account to get started</p>
+                <button class="ghost" id="signUp">Sign Up</button>
+            </div>
+        </div>
+    </div>
 
 </div>
 
-<script>
-const signUpButton = document.getElementById('signUp');
-const signInButton = document.getElementById('signIn');
-const container = document.getElementById('container');
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword }
+  from "https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js";
+import { getFirestore, doc, setDoc, getDoc }
+  from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
 
-signUpButton.addEventListener('click', () => {
-	container.classList.add("right-panel-active");
-});
+const firebaseConfig = {
+  apiKey: "AIzaSyDqL0PxVEwZw0EjCXRr-4GoeVXBYUbLKzM",
+  authDomain: "book-it-31803.firebaseapp.com",
+  projectId: "book-it-31803",
+  storageBucket: "book-it-31803.firebasestorage.app",
+  messagingSenderId: "811736774940",
+  appId: "1:811736774940:web:17b328d65d808f8492a2d9"
+};
 
-signInButton.addEventListener('click', () => {
-	container.classList.remove("right-panel-active");
-});
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+window.onload = () => {
+
+  // PANEL SWITCH BUTTONS
+  document.getElementById("signUp").onclick = () => {
+    document.getElementById("container").classList.add("right-panel-active");
+  };
+
+  document.getElementById("signIn").onclick = () => {
+    document.getElementById("container").classList.remove("right-panel-active");
+  };
+
+
+  // SIGN UP BUTTON
+  document.getElementById("signupBtn").onclick = async () => {
+    const name = document.getElementById("signup-name").value;
+    const email = document.getElementById("signup-email").value;
+    const password = document.getElementById("signup-password").value;
+
+    try {
+      const res = await createUserWithEmailAndPassword(auth, email, password);
+
+      await setDoc(doc(db, "users", res.user.uid), { 
+        name: name,
+        email: email 
+      });
+
+      alert("Account created!");
+      document.getElementById("container").classList.remove("right-panel-active");
+
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
+
+  // LOGIN BUTTON
+  document.getElementById("loginBtn").onclick = async () => {
+    const email = document.getElementById("login-email").value;
+    const password = document.getElementById("login-password").value;
+
+    try {
+      const res = await signInWithEmailAndPassword(auth, email, password);
+
+      const snap = await getDoc(doc(db, "users", res.user.uid));
+      if (snap.exists()) {
+        localStorage.setItem("username", snap.data().name);
+      }
+
+      window.location.href = "index.html";
+
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
+};
+
 </script>
+
 
 </body>
 </html>

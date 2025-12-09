@@ -294,29 +294,34 @@ function toggleMenu() {
   document.querySelector("header nav").classList.toggle("show");
 }
 
-const bot = document.querySelector(".bot");
-const chat = document.getElementById("chatBox");
-const messages = document.getElementById("messages");
+// const bot = document.querySelector(".bot");
+// const chat = document.getElementById("chatBox");
+// const messages = document.getElementById("messages");
 
-// Toggle chat
-bot.addEventListener("click", () => {
-  chat.style.display = chat.style.display === "flex" ? "none" : "flex";
+// // Toggle chat
+// bot.addEventListener("click", () => {
+//   chat.style.display = chat.style.display === "flex" ? "none" : "flex";
+// });
+// // Send message
+// function sendMsg() {
+//   const input = document.getElementById("userInput");
+//   const text = input.value.trim();
+
+//   if (text === "") return;
+
+//   // Show user message
+//   messages.innerHTML += `<div class="userMsg">${text}</div>`;
+
+//   input.value = "";
+
+//   // Bot reply
+//   setTimeout(() => {
+//     messages.innerHTML += `<div class="botMsg">Have a nice day, I will talk to you later....</div>`;
+//     messages.scrollTop = messages.scrollHeight;
+//   }, 400);
+// }
+
+window.addEventListener("load", () => {
+  document.getElementById("loader-wrapper").style.display = "none";
+  document.getElementById("content").style.display = "block";
 });
-// Send message
-function sendMsg() {
-  const input = document.getElementById("userInput");
-  const text = input.value.trim();
-
-  if (text === "") return;
-
-  // Show user message
-  messages.innerHTML += `<div class="userMsg">${text}</div>`;
-
-  input.value = "";
-
-  // Bot reply
-  setTimeout(() => {
-    messages.innerHTML += `<div class="botMsg">Have a nice day, I will talk to you later....</div>`;
-    messages.scrollTop = messages.scrollHeight;
-  }, 400);
-}
