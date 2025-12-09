@@ -330,36 +330,41 @@
   </head>
   <body>
     <header>
-      <div class="logo" onclick="window.location.href='index.html'">Book-It</div>
+      <div class="logo" onclick="window.location.href='index.html'">
+        Book-It
+      </div>
       <button class="clear" onclick="clearall()">
         Clear All <i class="fa-solid fa-trash-can"></i>
       </button>
       <!-- <div></div> -->
     </header>
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
-import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js";
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
+      import {
+        getAuth,
+        onAuthStateChanged,
+      } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDqL0PxVEwZw0EjCXRr-4GoeVXBYUbLKzM",
-  authDomain: "book-it-31803.firebaseapp.com",
-  projectId: "book-it-31803",
-  storageBucket: "book-it-31803.firebasestorage.app",
-  messagingSenderId: "811736774940",
-  appId: "1:811736774940:web:17b328d65d808f8492a2d9"
-};
+      const firebaseConfig = {
+        apiKey: "AIzaSyDqL0PxVEwZw0EjCXRr-4GoeVXBYUbLKzM",
+        authDomain: "book-it-31803.firebaseapp.com",
+        projectId: "book-it-31803",
+        storageBucket: "book-it-31803.firebasestorage.app",
+        messagingSenderId: "811736774940",
+        appId: "1:811736774940:web:17b328d65d808f8492a2d9",
+      };
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
 
-onAuthStateChanged(auth, (user) => {
-    if (!user) {
-        // User NOT logged in
-        alert("You must be logged in to access this page.");
-        window.location.href = "login.html";
-    }
-});
-</script>
+      onAuthStateChanged(auth, (user) => {
+        if (!user) {
+          // User NOT logged in
+          alert("You must be logged in to access this page.");
+          window.location.href = "login.html";
+        }
+      });
+    </script>
 
     <script>
       // ---------------------- CART LOGIC ----------------------
@@ -533,13 +538,11 @@ onAuthStateChanged(auth, (user) => {
         let discountAmount = (total * currentOffer) / 100;
         let finalTotal = Math.floor(total - discountAmount);
         console.log(finalTotal);
-        
 
         // Save discount data
         localStorage.setItem("discountedTotal", finalTotal);
         localStorage.setItem("discountedCart", JSON.stringify(data));
         localStorage.setItem("offerApplied", currentOffer + "% OFF");
-
 
         // Save 30 min claim lock
         localStorage.setItem("offerClaimTime", Date.now());
@@ -572,26 +575,26 @@ onAuthStateChanged(auth, (user) => {
 
       const confirmBtn = select.querySelector(".confirm-btn");
       confirmBtn.onclick = function () {
-  let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
-  let total = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
+        let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+        let total = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
 
-  let discountedTotal = localStorage.getItem("discountedTotal") || total;
-  let offerApplied = localStorage.getItem("offerApplied") || "No Offer";
+        let discountedTotal = localStorage.getItem("discountedTotal") || total;
+        let offerApplied = localStorage.getItem("offerApplied") || "No Offer";
 
-  // ---------- BILL DATA OBJECT ----------
-  let billData = {
-    products: cart,
-    offer: offerApplied,
-    delivery: "FREE",
-    total: total,
-    finalAmount: discountedTotal
-  };
+        // ---------- BILL DATA OBJECT ----------
+        let billData = {
+          products: cart,
+          offer: offerApplied,
+          delivery: "FREE",
+          total: total,
+          finalAmount: discountedTotal,
+        };
 
-  // ---------- SAVE FOR BILL PAGE ----------
-  localStorage.setItem("billData", JSON.stringify(billData));
+        // ---------- SAVE FOR BILL PAGE ----------
+        localStorage.setItem("billData", JSON.stringify(billData));
 
-  window.location.href = "deliver.html";
-};
+        window.location.href = "deliver.html";
+      };
 
       // ---------------------- OFFER BUTTON ----------------------
       const offerBtn = document.createElement("button");

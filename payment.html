@@ -1,149 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bill</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bill</title>
 
-  <style>
-    :root {
-      --neon-blue: #00eaff;
-      --neon-green: #00ffbf;
-      --dark-bg: #000;
-      --glass: rgba(255, 255, 255, 0.08);
-    }
+    <style>
+      :root {
+        --neon-blue: #00eaff;
+        --neon-green: #00ffbf;
+        --dark-bg: #000;
+        --glass: rgba(255, 255, 255, 0.08);
+      }
 
-    body {
-      font-family: "Poppins", sans-serif;
-      background: var(--dark-bg);
-      color: #fff;
-      margin: 0;
-      padding: 25px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-    }
+      body {
+        font-family: "Poppins", sans-serif;
+        background: var(--dark-bg);
+        color: #fff;
+        margin: 0;
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+      }
 
-    h1 {
-      color: var(--neon-green);
-      margin-bottom: 10px;
-      text-align: center;
-    }
+      h1 {
+        color: var(--neon-green);
+        margin-bottom: 10px;
+        text-align: center;
+      }
 
-    .bill-box {
-      width: 95%;
-      max-width: 480px;
-      padding: 20px;
-      margin-top: 25px;
-      background: var(--glass);
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.1);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 0 15px rgba(0,234,255,0.3);
-    }
+      .bill-box {
+        width: 95%;
+        max-width: 480px;
+        padding: 20px;
+        margin-top: 25px;
+        background: var(--glass);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0 15px rgba(0, 234, 255, 0.3);
+      }
 
-    .row {
-      display: flex;
-      justify-content: space-between;
-      margin: 10px 0;
-      font-size: 16px;
-    }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0;
+        font-size: 16px;
+      }
 
-    .total {
-      font-size: 20px;
-      font-weight: bold;
-      color: var(--neon-blue);
-      margin-top: 20px;
-      border-top: 1px solid rgba(255,255,255,0.2);
-      padding-top: 15px;
-    }
+      .total {
+        font-size: 20px;
+        font-weight: bold;
+        color: var(--neon-blue);
+        margin-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding-top: 15px;
+      }
 
-    .address-box {
-      margin-bottom: 20px;
-      padding: 15px;
-      border-radius: 10px;
-      background: rgba(0,255,191,0.08);
-      border: 1px solid rgba(0,255,191,0.4);
-      box-shadow: 0 0 12px rgba(0,255,191,0.3);
-    }
+      .address-box {
+        margin-bottom: 20px;
+        padding: 15px;
+        border-radius: 10px;
+        background: rgba(0, 255, 191, 0.08);
+        border: 1px solid rgba(0, 255, 191, 0.4);
+        box-shadow: 0 0 12px rgba(0, 255, 191, 0.3);
+      }
 
-    .address-box h3 {
-      margin-bottom: 10px;
-      color: var(--neon-green);
-      font-size: 18px;
-    }
+      .address-box h3 {
+        margin-bottom: 10px;
+        color: var(--neon-green);
+        font-size: 18px;
+      }
 
-    .address-line {
-      margin: 4px 0;
-      font-size: 15px;
-      color: #ddd;
-    }
+      .address-line {
+        margin: 4px 0;
+        font-size: 15px;
+        color: #ddd;
+      }
 
-    button {
-      margin-top: 30px;
-      padding: 12px 18px;
-      background: var(--neon-blue);
-      border: none;
-      border-radius: 10px;
-      color: #000;
-      font-weight: 600;
-      cursor: pointer;
-      transition: 0.3s ease;
-      box-shadow: 0 0 10px rgba(0,234,255,0.4);
-    }
+      button {
+        margin-top: 30px;
+        padding: 12px 18px;
+        background: var(--neon-blue);
+        border: none;
+        border-radius: 10px;
+        color: #000;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s ease;
+        box-shadow: 0 0 10px rgba(0, 234, 255, 0.4);
+      }
 
-    button:hover {
-      background: var(--neon-green);
-      box-shadow: 0 0 12px rgba(0,255,191,0.6);
-      transform: scale(1.03);
-    }
+      button:hover {
+        background: var(--neon-green);
+        box-shadow: 0 0 12px rgba(0, 255, 191, 0.6);
+        transform: scale(1.03);
+      }
 
-    p {
-      margin-top: 10px;
-      text-align: center;
-      color: #aaa;
-    }
-  </style>
+      p {
+        margin-top: 10px;
+        text-align: center;
+        color: #aaa;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Order Successful! ✓</h1>
+    <p>Thank you for your purchase. Arriving in 3 days.</p>
 
-</head>
-<body>
+    <div class="bill-box" id="bill"></div>
 
-  <h1>Order Successful! ✓</h1>
-  <p>Thank you for your purchase. Arriving in 3 days.</p>
+    <button onclick="window.location.href='index.html'">
+      Continue Shopping
+    </button>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
+      import {
+        getAuth,
+        onAuthStateChanged,
+      } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js";
 
-  <div class="bill-box" id="bill"></div>
+      const firebaseConfig = {
+        apiKey: "AIzaSyDqL0PxVEwZw0EjCXRr-4GoeVXBYUbLKzM",
+        authDomain: "book-it-31803.firebaseapp.com",
+        projectId: "book-it-31803",
+        storageBucket: "book-it-31803.firebasestorage.app",
+        messagingSenderId: "811736774940",
+        appId: "1:811736774940:web:17b328d65d808f8492a2d9",
+      };
 
-  <button onclick="window.location.href='index.html'">Continue Shopping</button>
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
 
-<script>
-let bill = JSON.parse(localStorage.getItem("billData"));
-let address = JSON.parse(localStorage.getItem("deliveryAddress"));
+      onAuthStateChanged(auth, (user) => {
+        if (!user) {
+          // User NOT logged in
+          alert("You must be logged in to access this page.");
+          window.location.href = "login.html";
+        }
+      });
+    </script>
+    <script>
+      let bill = JSON.parse(localStorage.getItem("billData"));
+      let address = JSON.parse(localStorage.getItem("deliveryAddress"));
 
-let html = `
+      let html = `
   <h2>🧾 Order Bill</h2>
 
   <div class="address-box">
     <h3>📍 Billing Address</h3>
-    <div class="address-line"><b>${address.fullname || "Not provided"}</b> (${address.phone || "-"})</div>
+    <div class="address-line"><b>${address.fullname || "Not provided"}</b> (${
+        address.phone || "-"
+      })</div>
     <div class="address-line">${address.address1 || ""}</div>
     <div class="address-line">${address.address2 || ""}</div>
-    <div class="address-line">${address.city || ""} - ${address.pincode || ""}</div>
-    <div class="address-line">${address.state || ""}, ${address.country || ""}</div>
-    <div class="address-line" style="margin-top:8px;color:#00eaff;">📧 ${address.email || ""}</div>
+    <div class="address-line">${address.city || ""} - ${
+        address.pincode || ""
+      }</div>
+    <div class="address-line">${address.state || ""}, ${
+        address.country || ""
+      }</div>
+    <div class="address-line" style="margin-top:8px;color:#00eaff;">📧 ${
+      address.email || ""
+    }</div>
   </div>
 `;
 
-bill.products.forEach(p => {
-  html += `
+      bill.products.forEach((p) => {
+        html += `
     <div class="row">
       <span>${p.name} (x${p.qty})</span>
       <span>₹${p.price * p.qty}</span>
     </div>
   `;
-});
+      });
 
-html += `
+      html += `
   <div class="row">
     <span>Offer Applied:</span>
     <span>${bill.offer}</span>
@@ -160,16 +194,15 @@ html += `
   </div>
 `;
 
-document.getElementById("bill").innerHTML = html;
+      document.getElementById("bill").innerHTML = html;
 
-// Clear ONLY cart data, NOT address
-localStorage.removeItem("cartItems");
-localStorage.setItem("tc", 0);
-localStorage.removeItem("discountedTotal");
-localStorage.removeItem("offerApplied");
-localStorage.removeItem("discountedCart");
-localStorage.removeItem("offerClaimTime");
-</script>
-
-</body>
+      // Clear ONLY cart data, NOT address
+      localStorage.removeItem("cartItems");
+      localStorage.setItem("tc", 0);
+      localStorage.removeItem("discountedTotal");
+      localStorage.removeItem("offerApplied");
+      localStorage.removeItem("discountedCart");
+      localStorage.removeItem("offerClaimTime");
+    </script>
+  </body>
 </html>

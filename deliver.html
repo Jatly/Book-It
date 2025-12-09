@@ -6,162 +6,162 @@
     <title>Delivery Address</title>
 
     <style>
-:root {
-  --neon-blue: #00eaff;
-  --neon-green: #00ffbf;
-  --dark-bg: #000;
-  --glass: rgba(255, 255, 255, 0.08);
-}
+      :root {
+        --neon-blue: #00eaff;
+        --neon-green: #00ffbf;
+        --dark-bg: #000;
+        --glass: rgba(255, 255, 255, 0.08);
+      }
 
-/* ---------------- BODY ---------------- */
-body {
-  font-family: "Poppins", sans-serif;
-  background: var(--dark-bg);
-  margin: 0;
-  padding: 25px 10px;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-}
+      /* ---------------- BODY ---------------- */
+      body {
+        font-family: "Poppins", sans-serif;
+        background: var(--dark-bg);
+        margin: 0;
+        padding: 25px 10px;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+      }
 
-/* ---------------- HEADER ---------------- */
-header {
-  width: 100%;
-  padding: 18px 5%;
-  background: rgba(20, 20, 20, 0.45);
-  backdrop-filter: blur(15px) saturate(180%);
-  -webkit-backdrop-filter: blur(15px) saturate(180%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-}
+      /* ---------------- HEADER ---------------- */
+      header {
+        width: 100%;
+        padding: 18px 5%;
+        background: rgba(20, 20, 20, 0.45);
+        backdrop-filter: blur(15px) saturate(180%);
+        -webkit-backdrop-filter: blur(15px) saturate(180%);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+      }
 
-.logo {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--neon-blue);
-  cursor: pointer;
-  letter-spacing: 1px;
-}
+      .logo {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--neon-blue);
+        cursor: pointer;
+        letter-spacing: 1px;
+      }
 
-/* ---------------- FORM ---------------- */
-form {
-  width: 100%;
-  max-width: 520px;
-  margin-top: 35px;
-  padding: 25px;
-  border-radius: 14px;
-  background: var(--glass);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 0 25px rgba(0, 234, 255, 0.15);
-  transition: 0.3s ease;
-}
+      /* ---------------- FORM ---------------- */
+      form {
+        width: 100%;
+        max-width: 520px;
+        margin-top: 35px;
+        padding: 25px;
+        border-radius: 14px;
+        background: var(--glass);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 0 25px rgba(0, 234, 255, 0.15);
+        transition: 0.3s ease;
+      }
 
-form:hover {
-  box-shadow: 0 0 35px rgba(0, 234, 255, 0.35);
-  transform: translateY(-2px);
-}
+      form:hover {
+        box-shadow: 0 0 35px rgba(0, 234, 255, 0.35);
+        transform: translateY(-2px);
+      }
 
-/* ---------------- INPUTS ---------------- */
-input[type="text"],
-input[type="tel"],
-input[type="email"] {
-  width: 100%;
-  padding: 14px;
-  margin: 12px 0;
-  border: 1px solid var(--neon-blue);
-  border-radius: 10px;
-  background: #111;
-  color: #fff;
-  font-size: 15px;
-  transition: 0.3s;
-}
+      /* ---------------- INPUTS ---------------- */
+      input[type="text"],
+      input[type="tel"],
+      input[type="email"] {
+        width: 100%;
+        padding: 14px;
+        margin: 12px 0;
+        border: 1px solid var(--neon-blue);
+        border-radius: 10px;
+        background: #111;
+        color: #fff;
+        font-size: 15px;
+        transition: 0.3s;
+      }
 
-input::placeholder {
-  color: #777;
-}
+      input::placeholder {
+        color: #777;
+      }
 
-input:hover {
-  border-color: var(--neon-green);
-}
+      input:hover {
+        border-color: var(--neon-green);
+      }
 
-input:focus {
-  outline: none;
-  border-color: var(--neon-green);
-  box-shadow: 0 0 8px var(--neon-green);
-}
+      input:focus {
+        outline: none;
+        border-color: var(--neon-green);
+        box-shadow: 0 0 8px var(--neon-green);
+      }
 
-/* ---------------- BUTTON ---------------- */
-button {
-  width: 100%;
-  padding: 14px;
-  margin-top: 15px;
-  font-size: 16px;
-  font-weight: bold;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  background: var(--neon-blue);
-  color: #000;
-  transition: 0.3s ease;
-  box-shadow: 0 0 12px rgba(0, 234, 255, 0.4);
-  letter-spacing: 0.5px;
-}
+      /* ---------------- BUTTON ---------------- */
+      button {
+        width: 100%;
+        padding: 14px;
+        margin-top: 15px;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        background: var(--neon-blue);
+        color: #000;
+        transition: 0.3s ease;
+        box-shadow: 0 0 12px rgba(0, 234, 255, 0.4);
+        letter-spacing: 0.5px;
+      }
 
-button:hover {
-  background: var(--neon-green);
-  box-shadow: 0 0 15px rgba(0, 255, 191, 0.6);
-  transform: scale(1.03);
-}
+      button:hover {
+        background: var(--neon-green);
+        box-shadow: 0 0 15px rgba(0, 255, 191, 0.6);
+        transform: scale(1.03);
+      }
 
-button:active {
-  transform: scale(0.96);
-}
+      button:active {
+        transform: scale(0.96);
+      }
 
-/* ---------------- TEXT ---------------- */
-p {
-  font-size: 14px;
-  margin-top: 15px;
-  color: #ccc;
-  text-align: center;
-}
+      /* ---------------- TEXT ---------------- */
+      p {
+        font-size: 14px;
+        margin-top: 15px;
+        color: #ccc;
+        text-align: center;
+      }
 
-/* ---------------- RESPONSIVE ---------------- */
-@media (max-width: 500px) {
+      /* ---------------- RESPONSIVE ---------------- */
+      @media (max-width: 500px) {
+        form {
+          padding: 18px;
+          border-radius: 10px;
+        }
 
-  form {
-    padding: 18px;
-    border-radius: 10px;
-  }
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"] {
+          padding: 12px;
+        }
 
-  input[type="text"],
-  input[type="tel"],
-  input[type="email"] {
-    padding: 12px;
-  }
+        button {
+          padding: 12px;
+          font-size: 15px;
+        }
 
-  button {
-    padding: 12px;
-    font-size: 15px;
-  }
-
-  .logo {
-    font-size: 1.3rem;
-  }
-}
-
+        .logo {
+          font-size: 1.3rem;
+        }
+      }
     </style>
   </head>
   <body>
     <header>
-      <div class="logo" onclick="window.location.href='index.html'">Book-It</div>
+      <div class="logo" onclick="window.location.href='index.html'">
+        Book-It
+      </div>
     </header>
 
     <form action="">
@@ -195,35 +195,61 @@ p {
         are here to guide you on your literary journey.
       </p>
     </form>
-<script>
-  // Autofill if saved
-  let saved = localStorage.getItem("deliveryAddress");
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
+      import {
+        getAuth,
+        onAuthStateChanged,
+      } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js";
 
-  if (saved) {
-    let data = JSON.parse(saved);
+      const firebaseConfig = {
+        apiKey: "AIzaSyDqL0PxVEwZw0EjCXRr-4GoeVXBYUbLKzM",
+        authDomain: "book-it-31803.firebaseapp.com",
+        projectId: "book-it-31803",
+        storageBucket: "book-it-31803.firebasestorage.app",
+        messagingSenderId: "811736774940",
+        appId: "1:811736774940:web:17b328d65d808f8492a2d9",
+      };
 
-    // Loop through all keys and fill automatically
-    for (let key in data) {
-      let input = document.querySelector(`input[name=${key}]`);
-      if (input) input.value = data[key];
-    }
-  }
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
 
-  const form = document.querySelector("form");
+      onAuthStateChanged(auth, (user) => {
+        if (!user) {
+          // User NOT logged in
+          alert("You must be logged in to access this page.");
+          window.location.href = "login.html";
+        }
+      });
+    </script>
+    <script>
+      // Autofill if saved
+      let saved = localStorage.getItem("deliveryAddress");
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
+      if (saved) {
+        let data = JSON.parse(saved);
 
-    let formData = new FormData(form);
-    let obj = Object.fromEntries(formData);
+        // Loop through all keys and fill automatically
+        for (let key in data) {
+          let input = document.querySelector(`input[name=${key}]`);
+          if (input) input.value = data[key];
+        }
+      }
 
-    localStorage.setItem("deliveryAddress", JSON.stringify(obj));
+      const form = document.querySelector("form");
 
-    alert("Address saved successfully!");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
 
-    window.location.href = "payment.html";
-  });
-</script>
+        let formData = new FormData(form);
+        let obj = Object.fromEntries(formData);
 
-</body>
+        localStorage.setItem("deliveryAddress", JSON.stringify(obj));
+
+        alert("Address saved successfully!");
+
+        window.location.href = "payment.html";
+      });
+    </script>
+  </body>
 </html>
