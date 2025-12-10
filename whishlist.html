@@ -162,7 +162,90 @@
         text-align: center;
       }
 
-      /* ---------------- RESPONSIVE ---------------- */
+      /* ============================
+   LARGE SCREENS — 1400px
+============================ */
+      @media (max-width: 1400px) {
+        #wishlistContainer {
+          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        }
+      }
+
+      /* ============================
+   LAPTOPS / SMALL DESKTOPS — 1200px
+============================ */
+      @media (max-width: 1200px) {
+        header {
+          padding: 12px 4%;
+        }
+
+        .logo {
+          font-size: 1.3rem;
+        }
+
+        #wishlistContainer {
+          grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+          padding: 25px;
+        }
+
+        .wish-card img {
+          height: 260px;
+        }
+      }
+
+      /* ============================
+   TABLETS — 992px
+============================ */
+      @media (max-width: 992px) {
+        #wishlistContainer {
+          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        }
+
+        .wish-card img {
+          height: 230px;
+        }
+
+        h1 {
+          font-size: 1.8rem;
+        }
+      }
+
+      /* ============================
+   MEDIUM TABLETS — 768px
+============================ */
+      @media (max-width: 768px) {
+        header {
+          padding: 10px 3%;
+        }
+
+        .logo {
+          font-size: 1.2rem;
+        }
+
+        #wishlistContainer {
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          padding: 20px;
+        }
+
+        .wish-card {
+          padding: 12px;
+        }
+
+        .wish-card img {
+          height: 210px;
+        }
+
+        .qtyBtn,
+        .addCartBtn,
+        .removeBtn {
+          padding: 8px 10px;
+          font-size: 14px;
+        }
+      }
+
+      /* ============================
+   MOBILE — 600px (your existing)
+============================ */
       @media (max-width: 600px) {
         #wishlistContainer {
           grid-template-columns: 1fr;
@@ -178,6 +261,38 @@
         .removeBtn {
           padding: 10px;
           font-size: 15px;
+        }
+      }
+
+      /* ============================
+   SMALL MOBILE — 430px
+============================ */
+      @media (max-width: 430px) {
+        h1 {
+          font-size: 1.6rem;
+        }
+
+        .wish-card img {
+          height: 220px;
+        }
+
+        .qtyDisplay {
+          font-size: 16px;
+        }
+
+        .qtyBtn,
+        .addCartBtn {
+          padding: 7px 9px;
+          font-size: 13px;
+        }
+      }
+
+      /* ============================
+   ULTRA SMALL DEVICES — 360px
+============================ */
+      @media (max-width: 360px) {
+        header .logo {
+          font-size: 1rem;
         }
       }
     </style>

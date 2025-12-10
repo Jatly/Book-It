@@ -40,6 +40,17 @@
           z-index: 1111;
       }
 
+      .show {
+          position: absolute;
+          top: 90%;
+          right: 0%;
+          background: var(--dark-bg);
+          border: 1px solid var(--neon-green);
+          padding: 20px;
+          width: 40%;
+          display: flex;
+          flex-direction: column;
+      }
 
 
       .logo {
@@ -66,7 +77,7 @@
 
       .fa-heart {
           font-size: x-large;
-          color: #000;
+          color: red;
           text-shadow: 0 0 8px var(--dark-bg);
           transition: color 0.3s ease, transform 0.3s ease;
       }
@@ -105,11 +116,7 @@
           cursor: var(--neon-green);
       }
 
-      nav div sup {
-          position: absolute;
-          top: 12%;
-          left: 77.6%;
-      }
+
 
       nav div:hover {
           color: var(--neon-green);
@@ -232,9 +239,7 @@
               font-size: 1.6rem;
           }
 
-          button {
-              width: fit-content;
-          }
+
       }
 
       /* ---------------- ABOUT ---------------- */
@@ -569,164 +574,7 @@
           }
       }
 
-      /* box sizing so padding doesn't break sizing */
-      *,
-      *::before,
-      *::after {
-          box-sizing: border-box;
-      }
 
-      /* Bot floating icon */
-      .bot {
-          background: url("bot.gif") center/cover no-repeat;
-          position: fixed;
-          bottom: 30px;
-          left: 30px;
-          width: 100px;
-          height: 100px;
-          border-radius: 50%;
-          cursor: pointer;
-          transition: box-shadow 0.2s ease, transform 0.15s ease;
-          z-index: 1000;
-      }
-
-      /* Chat panel (hidden by default) */
-      .chat {
-          position: fixed;
-          bottom: 140px;
-          left: 60px;
-          width: 300px;
-          max-height: 360px;
-          display: none;
-          /* hidden until .open is added */
-          flex-direction: column;
-          border-radius: 10px;
-          background: var(--dark-bg);
-          border: 1px solid var(--neon-green);
-          box-shadow: 0 0 10px var(--neon-blue);
-          padding: 10px;
-          gap: 8px;
-          z-index: 999;
-      }
-
-      /* show chat */
-      .chat.open {
-          display: flex;
-      }
-
-      /* Messages area - column, scrollable, keeps footer at bottom */
-      .messages {
-          display: flex;
-          flex-direction: column;
-          gap: 8px;
-          overflow-y: auto;
-          /* make messages take available vertical space before footer */
-          flex: 1 1 auto;
-          padding-right: 6px;
-      }
-
-      /* Footer containing input + send button */
-      .chat .footer {
-          display: flex;
-          gap: 8px;
-          align-items: center;
-          justify-content: space-between;
-          padding-top: 6px;
-          flex: 0 0 auto;
-      }
-
-      /* Input styling (dark mode) */
-      .chat input[type="text"],
-      .chat input[type="search"],
-      .chat textarea {
-          flex: 1 1 auto;
-          border: 1px solid var(--neon-green);
-          background: #0f1113;
-          color: var(--neon-green);
-          border-radius: 10px;
-          padding: 8px 10px;
-          outline: none;
-      }
-
-      /* placeholder color */
-      .chat input::placeholder,
-      .chat textarea::placeholder {
-          color: #4b4b4b;
-      }
-
-      /* Send / action button */
-      .chbtn {
-          padding: 8px 12px;
-          color: #000;
-          border-radius: 8px;
-          background: var(--neon-green);
-          border: none;
-          cursor: pointer;
-          font-weight: 700;
-          flex: 0 0 auto;
-      }
-
-      .chbtn:hover {
-          background: #fff;
-          color: var(--dark-bg);
-      }
-
-      /* message bubble base */
-      .userMsg,
-      .botMsg {
-          display: inline-block;
-          padding: 8px 12px;
-          border-radius: 12px;
-          max-width: 75%;
-          word-wrap: break-word;
-          line-height: 1.2;
-      }
-
-      /* user bubble: right aligned */
-      .userMsg {
-          background: #00eaff;
-          color: #000;
-          align-self: flex-end;
-          /* ensures bubble is pushed to right */
-          text-align: right;
-          margin: 0;
-          /* we use gap for spacing */
-      }
-
-      /* bot bubble: left aligned */
-      .botMsg {
-          background: var(--neon-green);
-          color: #000;
-          align-self: flex-start;
-          /* ensures bubble is pushed to left */
-          text-align: left;
-          margin: 0;
-      }
-
-      /* small avatar helper (optional) - keeps vertical alignment when you add avatars */
-      .msg-row {
-          display: flex;
-          align-items: flex-end;
-          /* keeps avatar and bubble aligned vertically */
-          gap: 8px;
-      }
-
-      /* for bot messages with avatar on left */
-      .msg-row.bot {
-          justify-content: flex-start;
-      }
-
-      /* for user messages with avatar on right */
-      .msg-row.user {
-          justify-content: flex-end;
-      }
-
-      /* auto-scroll visual nicety: keep padding at bottom */
-      .messages::after {
-          content: "";
-          display: block;
-          height: 6px;
-      }
 
       footer {
           width: 100%;
@@ -753,226 +601,185 @@
           margin-top: 5px;
       }
 
-      /* ---------------- RESPONSIVE ---------------- */
-
-      @media (max-width: 768px) {
+      /* ============================
+   GLOBAL RESPONSIVE SETTINGS
+============================ */
+      @media (max-width: 1200px) {
           header {
               padding: 12px 4%;
           }
 
           .hero {
+              flex-direction: column;
               text-align: center;
+              height: auto;
+              padding-top: 120px;
           }
 
+          .hero .l,
+          .hero .r {
+              max-width: 100%;
+          }
+      }
+
+      /* ============================
+   TABLET VIEW — 992px
+============================ */
+      @media (max-width: 992px) {
           nav {
               gap: 15px;
           }
 
-          .la {
-              max-width: 100%;
+          .hero h2 {
+              font-size: 1.8rem;
+          }
+
+          .product {
+              grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          }
+
+          .child img {
+              height: 210px;
+          }
+
+          .con {
+              grid-template-columns: repeat(2, 1fr);
           }
       }
 
-      @media (max-width: 480px) {
-          .hero {
-              padding: 40px 3%;
-          }
-
-          button {
-              width: 100%;
-          }
-      }
-
+      /* ============================
+   MOBILE — 768px
+============================ */
       @media (max-width: 768px) {
+          header {
+              flex-direction: row;
+              justify-content: space-between;
+              padding: 10px 4%;
+          }
+
+          nav {
+              display: none;
+              /* Hide top menu on mobile */
+          }
+
+          .menu-btn {
+              display: block;
+              color: var(--neon-blue);
+              font-size: 1.8rem;
+              cursor: pointer;
+          }
+
           .hero {
-              padding: 30px 5%;
-              height: auto;
+              padding: 40px 5%;
               flex-direction: column;
-              gap: 25px;
           }
 
           .hero div {
               width: 100%;
-              padding: 18px;
-          }
-
-          .hero h2 {
-              font-size: 1.4rem;
-              text-align: center;
-          }
-
-          .hero .l {
-              max-width: 100%;
-              text-align: center;
           }
 
           .hero .r img {
-              max-width: 90%;
-              margin: auto;
+              width: 100%;
+              max-width: 360px;
+          }
+
+          .about {
+              height: auto;
+              padding: 50px 5%;
+          }
+
+          .product {
+              grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+          }
+
+          .child {
+              max-width: 200px;
+          }
+
+          .con {
+              grid-template-columns: repeat(1, 1fr);
+          }
+      }
+
+      /* ============================
+   SMALL MOBILE — 540px
+============================ */
+      @media (max-width: 540px) {
+
+          .logo {
+              font-size: 1.2rem;
+          }
+
+          .hero h2 {
+              font-size: 1.5rem;
           }
 
           button {
               width: 100%;
           }
-      }
-
-      @media (max-width: 480px) {
-          .hero h2 {
-              font-size: 1.2rem;
-          }
-
-          .hero .l {
-              font-size: 0.9rem;
-          }
-
-          .hero .r img {
-              max-width: 100%;
-          }
-      }
-
-      @media (max-width: 600px) {
-          .products {
-              padding: 40px 5%;
-          }
-
-          .product {
-              grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-              gap: 18px;
-          }
 
           .child {
               max-width: 100%;
-              padding: 12px;
-          }
-
-          .child img {
-              height: 160px;
-          }
-
-          .child h3 {
-              font-size: 1rem;
-          }
-
-          .child p {
-              font-size: 0.85rem;
-          }
-      }
-
-      @media (max-width: 400px) {
-          .product {
-              grid-template-columns: 1fr;
           }
 
           .child img {
               height: 180px;
           }
+
+          .contact h2 {
+              font-size: 1.7rem;
+          }
+
+          .wish {
+              top: 48%;
+              right: 3%;
+          }
+
       }
 
-      @media (max-width: 768px) {
-          header nav {
-              position: absolute;
-              top: 65px;
-              left: 0;
-              width: 100%;
-              background: #000;
-              display: none;
-              flex-direction: column;
-              padding: 20px 0;
-              text-align: center;
-              gap: 15px;
-          }
+      /* ============================
+   ULTRA SMALL DEVICES — 360px
+============================ */
+      @media (max-width: 360px) {
 
-          header nav.show {
-              display: flex;
-          }
-
-          .menu-btn {
-              display: block;
-          }
-      }
-
-      /* TABLET VIEW (768px – 1024px) */
-      @media (max-width: 1024px) and (min-width: 769px) {
           header {
-              padding: 15px 4%;
+              padding: 8px 3%;
           }
 
-          header .logo {
-              font-size: 1.6rem;
-          }
-
-          header nav {
-              gap: 20px;
-          }
-
-          header nav a {
+          .logo {
               font-size: 1rem;
           }
+
+          .hero h2 {
+              font-size: 1.3rem;
+          }
+
+          .child img {
+              height: 150px;
+          }
+
+          footer {
+              padding: 10px;
+          }
+
+          footer .logo {
+              font-size: 20px;
+          }
+
+          footer .copy {
+              font-size: 12px;
+          }
+
+          .wish {
+              top: 43%;
+              right: 3%;
+          }
+
       }
 
-      /* TAB SIZE: 769px – 1024px */
-      @media (max-width: 1024px) and (min-width: 769px) {
 
-          /* Bot icon */
-          .bot {
-              width: 80px;
-              height: 80px;
-              bottom: 25px;
-              left: 25px;
-          }
 
-          /* Chat panel */
-          .chat {
-              width: 380px;
-              max-height: 340px;
-              bottom: 120px;
-              left: 40px;
-              padding: 8px;
-          }
 
-          /* Chat input + button */
-          .chat .footer input,
-          .chat .footer textarea {
-              padding: 6px 8px;
-              font-size: 0.9rem;
-          }
-
-          .chbtn {
-              padding: 6px 10px;
-              font-size: 0.9rem;
-          }
-
-          /* Message bubbles smaller */
-          .userMsg,
-          .botMsg {
-              max-width: 70%;
-              font-size: 0.85rem;
-              padding: 6px 10px;
-          }
-      }
-
-      @media (max-width: 768px) {
-          .bot {
-              width: 70px;
-              height: 70px;
-              bottom: 20px;
-              left: 20px;
-          }
-
-          .chat {
-              width: 90%;
-              left: 5%;
-              bottom: 100px;
-              max-height: 320px;
-              padding: 6px;
-          }
-
-          .userMsg,
-          .botMsg {
-              font-size: 0.8rem;
-              max-width: 75%;
-          }
-      }
 
       #loader-wrapper {
           position: fixed;

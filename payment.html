@@ -104,6 +104,129 @@
         text-align: center;
         color: #aaa;
       }
+
+      /* ===============================
+      RESPONSIVE DESIGN
+================================ */
+
+      /* Large screens (1500px and below) */
+      @media (max-width: 1500px) {
+        body {
+          padding: 20px;
+        }
+      }
+
+      /* Laptops (1200px) */
+      @media (max-width: 1200px) {
+        h1 {
+          font-size: 1.8rem;
+        }
+      }
+
+      /* Tablets Horizontal (992px) */
+      @media (max-width: 992px) {
+        body {
+          padding: 20px 10px;
+        }
+        .bill-box {
+          max-width: 450px;
+        }
+      }
+
+      /* Tablets Vertical (768px) */
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 1.6rem;
+        }
+        .bill-box {
+          padding: 18px;
+        }
+        .row {
+          font-size: 15px;
+        }
+        .total {
+          font-size: 18px;
+        }
+        .address-line {
+          font-size: 14px;
+        }
+      }
+
+      /* Mobile phones (480px) */
+      @media (max-width: 480px) {
+        body {
+          padding: 20px 8px;
+        }
+
+        h1 {
+          font-size: 1.4rem;
+        }
+
+        .bill-box {
+          width: 100%;
+          padding: 16px;
+          border-radius: 10px;
+        }
+
+        .row {
+          flex-direction: row;
+          font-size: 14px;
+        }
+
+        .address-box {
+          padding: 12px;
+        }
+
+        button {
+          padding: 12px;
+          font-size: 15px;
+        }
+      }
+
+      /* Small Phones (375px) */
+      @media (max-width: 375px) {
+        h1 {
+          font-size: 1.3rem;
+        }
+
+        .row {
+          font-size: 13px;
+        }
+
+        .total {
+          font-size: 17px;
+        }
+
+        button {
+          padding: 10px;
+          font-size: 14px;
+        }
+
+        .address-line {
+          font-size: 13px;
+        }
+      }
+
+      /* Ultra Small Phones (320px) */
+      @media (max-width: 320px) {
+        h1 {
+          font-size: 1.2rem;
+        }
+
+        .bill-box {
+          padding: 14px;
+        }
+
+        button {
+          padding: 9px;
+          font-size: 13px;
+        }
+
+        .address-line,
+        .row {
+          font-size: 12px;
+        }
+      }
     </style>
   </head>
   <body>

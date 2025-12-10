@@ -266,6 +266,39 @@
       .overlay-container button {
         color: #000;
       }
+
+      @media (max-width: 768px) {
+        body {
+          padding: 50% 0px;
+          display: flex;
+          align-items: center;
+        }
+
+        .container {
+          width: 100%;
+          max-width: 450px;
+          padding: 20px;
+          border-radius: 12px;
+          display: flex;
+          flex-direction: column;
+        }
+        .form-container {
+          width: 50%;
+          display: flex;
+          align-items: flex-start;
+          justify-content: center;
+        }
+        .overlay-container {
+          width: 50%;
+          /* display: none; */
+        }
+        .overlay-panel {
+          padding: 0 20px;
+        }
+        form {
+          padding: 0 20px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -291,7 +324,7 @@
           <input type="email" id="login-email" placeholder="Email" />
           <input type="password" id="login-password" placeholder="Password" />
 
-          <a href="#">Forgot your password?</a>
+          <a href="#" id="forgotPassword">Forgot your password?</a>
 
           <button type="button" id="loginBtn">Login</button>
         </form>
@@ -321,6 +354,7 @@
         getAuth,
         createUserWithEmailAndPassword,
         signInWithEmailAndPassword,
+        sendPasswordResetEmail,
       } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js";
       import {
         getFirestore,
@@ -401,6 +435,22 @@
             alert(error.message);
           }
         };
+      };
+      /* ---------------- FORGOT PASSWORD ---------------- */
+      document.getElementById("forgotPassword").onclick = async () => {
+        const email = document.getElementById("login-email").value;
+
+        if (!email) {
+          alert("Please enter your email first.");
+          return;
+        }
+
+        try {
+          await sendPasswordResetEmail(auth, email);
+          alert("Password reset link sent to your email.");
+        } catch (error) {
+          alert(error.message);
+        }
       };
     </script>
   </body>

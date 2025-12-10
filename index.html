@@ -29,6 +29,7 @@
         <span></span><span></span><span></span><span></span>
       </div>
     </div>
+
     <header>
       <div class="logo" onclick="window.location.href='index.html'">
         Book-It
@@ -58,6 +59,9 @@
         </button>
 
         <span id="userName" style="display: none; font-weight: bold"></span>
+        <span id="logoutBtn" style="display: none; cursor: pointer">
+          Logout <i class="fa-solid fa-right-from-bracket"></i>
+        </span>
       </nav>
     </header>
     <section class="hero">
@@ -144,21 +148,13 @@
       <p class="copy">© 2025 Book-It. All Rights Reserved.</p>
     </footer>
 
-    <!-- <div class="bot"></div>
-
-    <div class="chat" id="chatBox">
-      <div class="messages" id="messages"></div>
-
-      <input type="text" id="userInput" placeholder="Type a message..." />
-      <button class="chbtn" onclick="sendMsg()">Send</button>
-    </div> -->
-
     <script src="script.js"></script>
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
       import {
         getAuth,
         onAuthStateChanged,
+        signOut,
       } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js";
       import {
         getFirestore,
@@ -166,7 +162,6 @@
         getDoc,
       } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
 
-      // SAME CONFIG AS login.html
       const firebaseConfig = {
         apiKey: "AIzaSyDqL0PxVEwZw0EjCXRr-4GoeVXBYUbLKzM",
         authDomain: "book-it-31803.firebaseapp.com",
@@ -175,6 +170,7 @@
         messagingSenderId: "811736774940",
         appId: "1:811736774940:web:17b328d65d808f8492a2d9",
       };
+
       const app = initializeApp(firebaseConfig);
       const auth = getAuth(app);
       const db = getFirestore(app);
@@ -182,6 +178,7 @@
       // Get elements
       const loginBtn = document.getElementById("loginBtnIndex");
       const usernameSpan = document.getElementById("userName");
+      const logoutBtn = document.getElementById("logoutBtn");
 
       // Check Firebase login state
       onAuthStateChanged(auth, async (user) => {
@@ -201,12 +198,28 @@
             usernameSpan.style.display = "inline-block";
             usernameSpan.innerHTML =
               name + " <i class='fa-regular fa-user'></i>";
+
+            // Show logout button
+            logoutBtn.style.display = "inline-block";
           }
         } else {
           loginBtn.style.display = "inline-block";
           usernameSpan.style.display = "none";
+          logoutBtn.style.display = "none";
         }
       });
+
+      // LOGOUT BUTTON FUNCTION
+      logoutBtn.onclick = async () => {
+        try {
+          await signOut(auth);
+          alert("Logged out successfully!");
+          location.reload(); // refresh UI
+        } catch (err) {
+          console.log(err);
+          alert("Logout failed!");
+        }
+      };
     </script>
 
     <script

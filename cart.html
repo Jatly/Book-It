@@ -21,9 +21,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start;
         overflow-x: hidden;
-        box-sizing: border-box;
         min-height: 100vh;
       }
 
@@ -31,24 +29,25 @@
       header {
         position: sticky;
         top: 0;
-        width: 100vw;
+        width: 100%;
         padding: 15px 5%;
+        padding-left: 40px;
+        padding-right: 60px;
         background: rgba(20, 20, 20, 0.45);
-        backdrop-filter: blur(15px) saturate(180%);
-        -webkit-backdrop-filter: blur(15px) saturate(180%);
+        backdrop-filter: blur(15px);
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         display: flex;
+        justify-content: space-between;
         align-items: center;
-        gap: 75%;
-        z-index: 1111;
+        z-index: 1000;
       }
 
       .logo {
+        padding-left: 40px;
         font-size: 1.4rem;
         font-weight: 700;
         color: var(--neon-blue);
         cursor: pointer;
-        padding-left: 80px;
       }
 
       /* ---------------- SEARCH BOX ---------------- */
@@ -63,110 +62,84 @@
 
       .do input {
         flex: 1;
-        padding: 13.5px 20px;
+        padding: 13px 20px;
         background: #111;
         border: 1px solid var(--neon-blue);
-        border-right-color: transparent;
-        border-radius: 10px;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
+        border-right: none;
+        border-radius: 10px 0 0 10px;
         color: #fff;
-        outline: none;
-        transition: 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .do input::placeholder {
-        color: #888;
-      }
-
-      .do input:focus {
-        border-color: var(--neon-green);
-        box-shadow: 0 0 8px var(--neon-blue);
       }
 
       .do button {
-        padding: 13.5px 20px;
-        border-radius: 10px;
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-        border-left-color: transparent;
+        padding: 13px 20px;
         background: var(--neon-green);
-        color: #000;
-        cursor: pointer;
+        border-radius: 0 10px 10px 0;
         font-weight: 600;
-        transition: 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
       }
 
-      .do button:hover {
-        background: var(--neon-blue);
-        box-shadow: 0 0 10px var(--neon-blue);
-      }
-
-      /* ---------------- HEADINGS ---------------- */
-      h1 {
-        text-align: center;
-        margin-bottom: 25px;
-        color: var(--neon-green);
-      }
-
-      /* ---------------- CART ITEM BOX ---------------- */
+      /* ---------------- CART ITEM ROW LAYOUT ---------------- */
       .child {
+        width: 95%;
+        max-width: 950px;
+        padding: 15px;
+        margin: 15px 0;
         background: var(--glass);
         border-radius: 12px;
-        backdrop-filter: blur(12px);
-        padding: 12px;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        margin: 20px 0;
         border: 1px solid rgba(0, 255, 191, 0.3);
-        transition: background 0.3s ease, transform 0.3s ease;
+        backdrop-filter: blur(12px);
+
+        display: grid;
+        grid-template-columns: 80px 1fr auto auto;
+        align-items: center;
+        gap: 20px;
       }
 
-      .child:hover {
-        background: rgba(255, 255, 255, 0.12);
-        transform: translateY(-3px);
-      }
-
-      /* ---------------- IMAGE ---------------- */
+      /* IMAGE */
       .child img {
         width: 80px;
-        height: 100%;
-        object-fit: cover;
+        height: 95px;
         border-radius: 8px;
+        object-fit: cover;
       }
 
-      /* ---------------- NAME ---------------- */
-      .child h3 {
-        flex: 1;
+      /* NAME + PRICE SECTION */
+      .info h3 {
+        margin: 0;
         font-size: 18px;
         color: var(--neon-blue);
-        margin: 0;
       }
 
-      .child h3:hover {
-        text-shadow: 0 0 8px var(--neon-blue), 0 0 16px var(--neon-green);
-      }
-
-      /* ---------------- PRICE & TOTAL ---------------- */
-      .price,
-      .total {
+      .price {
         font-size: 16px;
+        font-weight: 600;
         color: var(--neon-green);
+      }
+
+      /* QTY CONTROLS */
+      .qty-box {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .qty-btn,
+      button {
+        padding: 6px 12px;
+        font-size: 16px;
+        background: var(--neon-green);
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
         font-weight: 600;
       }
 
-      /* ---------------- QTY ---------------- */
       .qty {
-        padding: 6px 10px;
-        font-size: 16px;
-        font-weight: 600;
+        padding: 6px 12px;
         background: var(--neon-blue);
-        color: #000;
         border-radius: 50%;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
+        font-weight: bold;
+        color: #000;
         animation: neonPulse 1.5s infinite;
       }
 
@@ -180,142 +153,112 @@
         }
       }
 
-      /* ---------------- BUTTONS ---------------- */
-      button {
-        padding: 6px 12px;
-        font-size: 16px;
-        font-weight: 600;
-        border: none;
+      /* DELETE BUTTON */
+      .child .delete-btn {
+        padding: 12px;
+        background: red;
         border-radius: 8px;
+        color: #fff;
         cursor: pointer;
-        background: var(--neon-green);
-        color: #000;
-        transition: all 0.3s ease;
-      }
-
-      button:hover {
-        transform: scale(1.05);
-        background: var(--neon-blue);
-      }
-
-      button:focus {
-        outline: 2px solid var(--neon-blue);
-        outline-offset: 2px;
-      }
-
-      button:active {
-        transform: scale(0.95);
       }
 
       /* ---------------- BILL ---------------- */
       .bill {
-        width: auto;
-        height: 70px;
+        padding: 15px 25px;
         background: var(--glass);
-        font-size: larger;
-        font-weight: bolder;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 12px;
+        border-radius: 10px;
+        font-weight: 700;
+        font-size: 20px;
         margin-top: 20px;
       }
 
-      /* ---------------- PAYMENT CONTAINER ---------------- */
+      /* ---------------- PAYMENT BOX ---------------- */
       .payment-container {
+        width: 250px;
         display: flex;
         flex-direction: column;
         gap: 15px;
-        width: 250px;
         margin: 30px auto;
-        font-family: "Segoe UI", sans-serif;
       }
 
       .payment-select select {
         width: 100%;
-        padding: 10px 15px;
+        padding: 12px 15px;
         border: 2px solid var(--neon-blue);
         border-radius: 8px;
-        font-size: 16px;
-        background-color: #1a1a1a;
-        color: #fff;
-        cursor: pointer;
-        transition: all 0.3s ease;
+        background: #1a1a1a;
+        color: white;
       }
 
-      .payment-select select:hover {
-        border-color: var(--neon-green);
-        box-shadow: 0 0 8px var(--neon-green);
-      }
-
-      .payment-select select:focus {
-        outline: 2px solid var(--neon-green);
-      }
-
-      /* ---------------- CONFIRM BUTTON ---------------- */
       .confirm-btn {
         padding: 12px;
         background: #434bff;
         color: white;
-        font-size: 16px;
-        font-weight: 600;
-        border: none;
         border-radius: 8px;
-        cursor: pointer;
-        transition: all 0.3s ease;
+        font-weight: 600;
       }
 
-      .confirm-btn:hover {
-        background: #5f78ff;
-        box-shadow: 0 4px 10px rgba(67, 75, 255, 0.3);
-      }
+      /* =====================================================
+   RESPONSIVE FIXES
+===================================================== */
 
-      .confirm-btn:focus {
-        outline: 2px solid var(--neon-blue);
-      }
-
-      .confirm-btn:active {
-        transform: scale(0.95);
-      }
-
-      /* ---------------- RESPONSIVE ---------------- */
-      @media (max-width: 600px) {
+      /* TABLETS */
+      @media (max-width: 768px) {
         .child {
-          flex-wrap: wrap;
-          height: auto;
-          padding: 15px;
+          grid-template-columns: 120px 1fr;
+          grid-template-rows: auto auto auto;
+          text-align: center;
           gap: 10px;
         }
 
+        .qty-box {
+          justify-content: center;
+        }
+
+        .child .delete-btn {
+          grid-column: span 2;
+          width: 100%;
+        }
+
         .child img {
+          margin: 0 auto;
+        }
+      }
+
+      /* MOBILE */
+      @media (max-width: 480px) {
+        .child {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .child img {
+          width: 120px;
+          height: 150px;
+          margin: 0 auto;
+        }
+
+        .qty-box {
+          justify-content: center;
+        }
+
+        .child .delete-btn {
           width: 100%;
-          height: 160px;
         }
 
-        .child h3 {
-          width: 100%;
+        .info h3 {
+          font-size: 16px;
         }
-
-        button {
-          padding: 10px 16px;
-          font-size: 17px;
+        .price {
+          font-size: 14px;
         }
+      }
 
-        .payment-container {
-          width: 90%;
-        }
-
-        .do {
-          flex-direction: column;
-        }
-
-        .do input,
-        .do button {
-          width: 100%;
-          border-radius: 10px;
-          border-right-color: var(--neon-blue);
-          border-left-color: var(--neon-green);
-          margin-bottom: 10px;
+      /* ULTRA SMALL */
+      @media (max-width: 340px) {
+        .qty,
+        .qty-btn {
+          font-size: 14px;
         }
       }
     </style>
@@ -384,22 +327,31 @@
         card.classList.add("child");
 
         let img = document.createElement("img");
+        let info = document.createElement("div"); // NEW
+        let controls = document.createElement("div"); // NEW
+
         let h3 = document.createElement("h3");
         let p = document.createElement("p");
         let q = document.createElement("p");
+
         let add = document.createElement("button");
         let remove = document.createElement("button");
         let dlt = document.createElement("button");
+
         let total = document.createElement("div");
 
+        // CLASSES
         total.classList.add("total");
         p.classList.add("price");
         q.classList.add("qty");
+        info.classList.add("info");
+        controls.classList.add("qty-box");
 
+        // BUTTON TEXT
         add.innerText = "+";
         remove.innerText = "-";
-
         dlt.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
+
         dlt.style.backgroundColor = "red";
         dlt.style.color = "white";
 
@@ -409,7 +361,6 @@
 
         tosum += sum;
         tc += val.qty;
-
         // ---------------------- BUTTON ACTIONS ----------------------
         add.onclick = function () {
           val.qty += 1;
@@ -440,7 +391,18 @@
         p.innerText = `₹${val.price}`;
         q.innerText = val.qty;
 
-        card.append(img, h3, total, q, remove, add, dlt);
+        // ---------------------- BUILD STRUCTURE ----------------------
+        controls.appendChild(remove);
+        controls.appendChild(q);
+        controls.appendChild(add);
+
+        info.appendChild(h3);
+        info.appendChild(p);
+
+        card.appendChild(img);
+        card.appendChild(info);
+        card.appendChild(controls);
+        card.appendChild(dlt);
         productsContainer.append(card);
       });
 
